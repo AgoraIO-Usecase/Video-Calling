@@ -84,7 +84,6 @@ class DialView: UIView {
         let rowSpaceCount: CGFloat = 3
         var rowSpace: CGFloat = (self.bounds.height - (buttonHeight * 4)) / rowSpaceCount
         rowSpace = (rowSpace > 50 ? 50 : rowSpace)
-//        let buttonHeight = (self.bounds.height - (rowSpace * rowSpaceCount)) / 4
         
         for (index, button) in buttons.enumerated() {
             rank = index % 3
