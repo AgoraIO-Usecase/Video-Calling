@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MainActivity -->
+    <string name="start_call_title">开始呼叫你的朋友</string>
+    <string name="main_welcome">欢迎使用</string>
+    <string name="identifier_format">您的识别码: %d</string>
+    <string name="share_code_hint">分享识别码使其他人可以呼叫您</string>
+    <string name="need_necessary_permissions">缺少必要权限</string>
+
+    <!-- Dial Activity -->
+    <string name="incomplete_dial_number">您输入的号码不完整</string>
+    <string name="peer_not_online">远端用户未登录</string>
+
+    <!-- Calling Activity -->
+    <string name="receiving_call">接收来电&#8230;</string>
+    <string name="calling_out">拨叫中&#8230;</string>
+
+    <!-- Video Activity -->
+    <string name="message_wrong_number">远端用户识别码错误</string>
+</resources>

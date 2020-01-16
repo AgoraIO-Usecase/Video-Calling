@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+    <RelativeLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/main_logo"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/logo_margin_bottom"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_logo"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_logo"
+            android:layout_centerHorizontal="true"
+            android:text="@string/main_welcome"
+            android:textSize="@dimen/text_size_normal"
+            android:textColor="@color/blue_alpha_2"
+            android:textScaleX="@dimen/text_scale_x"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_app_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_welcome_text"
+            android:layout_marginTop="@dimen/margin_smaller"
+            android:layout_centerHorizontal="true"
+            android:text="@string/app_name_simple"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_largest"
+            android:textScaleX="@dimen/text_scale_x"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/start_call_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/start_broadcast_height"
+            android:layout_below="@id/main_app_name_text"
+            android:layout_marginTop="@dimen/margin_large"
+            android:textAlignment="gravity"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/start_call_title"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/start_call_text_color"
+            android:textAllCaps="false"
+            android:onClick="onStartCall"
+            android:background="@drawable/start_call_bg"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_identifier_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start_call_button"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/share_code_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_identifier_code_text"
+            android:layout_marginTop="@dimen/margin_smaller"
+            android:layout_centerHorizontal="true"
+            android:text="@string/share_code_hint"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_small"/>
+    </RelativeLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/info_margin_bottom"
+        android:text="@string/powered_by_agora"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

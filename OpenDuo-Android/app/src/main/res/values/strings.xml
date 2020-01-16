@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name" translatable="false">OpenDuo-Android</string>
+
+    <!-- MainActivity -->
+    <string name="start_call_title">Start Calling Your Friend</string>
+    <string name="main_welcome">Welcome To</string>
+    <string name="app_name_simple" translatable="false">OPEN DUO</string>
+    <string name="identifier_format">Your Identifier Code: %d</string>
+    <string name="share_code_hint">Share the code so that others can call you</string>
+    <string name="powered_by_agora" translatable="false">Powered by agora.io</string>
+    <string name="need_necessary_permissions">Necessary permissions acquired</string>
+
+    <!-- Dial Activity -->
+    <string name="incomplete_dial_number">The number you dialed is incomplete</string>
+    <string name="peer_not_online">Peer has not logged on</string>
+
+    <!-- Calling Activity -->
+    <string name="receiving_call">Incoming&#8230;</string>
+    <string name="calling_out">Calling&#8230;</string>
+
+    <!-- Video Activity -->
+    <string name="message_wrong_number">Wrong Peer number</string>
+</resources>
