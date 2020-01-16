@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A70E43F123C6FDB200FC9581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F023C6FDB200FC9581 /* AppDelegate.swift */; };
-		A70E43F323C6FDB200FC9581 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F223C6FDB200FC9581 /* SceneDelegate.swift */; };
 		A70E43F523C6FDB200FC9581 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F423C6FDB200FC9581 /* MainViewController.swift */; };
 		A70E43F823C6FDB200FC9581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E43F623C6FDB200FC9581 /* Main.storyboard */; };
 		A70E43FA23C6FDB300FC9581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70E43F923C6FDB300FC9581 /* Assets.xcassets */; };
@@ -53,7 +52,6 @@
 /* Begin PBXFileReference section */
 		A70E43ED23C6FDB200FC9581 /* OpenDuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70E43F023C6FDB200FC9581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A70E43F223C6FDB200FC9581 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A70E43F423C6FDB200FC9581 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A70E43F723C6FDB200FC9581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A70E43F923C6FDB300FC9581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				A70E43F023C6FDB200FC9581 /* AppDelegate.swift */,
-				A70E43F223C6FDB200FC9581 /* SceneDelegate.swift */,
 				A70E43FE23C6FDB300FC9581 /* Info.plist */,
 				A70E442423CC6AA900FC9581 /* ring.mp3 */,
 				A70E43F923C6FDB300FC9581 /* Assets.xcassets */,
@@ -275,7 +272,6 @@
 				A70E441B23CC1E0F00FC9581 /* DialView.swift in Sources */,
 				A70E442323CC518900FC9581 /* AureolaView.swift in Sources */,
 				A756992023CD642800401ED5 /* VideoChatViewController.swift in Sources */,
-				A70E43F323C6FDB200FC9581 /* SceneDelegate.swift in Sources */,
 				A70E441F23CC4F7A00FC9581 /* CallingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +424,7 @@
 					"$(PROJECT_DIR)/OpenDuo",
 				);
 				INFOPLIST_FILE = OpenDuo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,6 +449,7 @@
 					"$(PROJECT_DIR)/OpenDuo",
 				);
 				INFOPLIST_FILE = OpenDuo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
