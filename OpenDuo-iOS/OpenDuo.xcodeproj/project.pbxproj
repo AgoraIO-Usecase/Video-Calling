@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A70E43F123C6FDB200FC9581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F023C6FDB200FC9581 /* AppDelegate.swift */; };
+		A70E43F523C6FDB200FC9581 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F423C6FDB200FC9581 /* MainViewController.swift */; };
+		A70E43F823C6FDB200FC9581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E43F623C6FDB200FC9581 /* Main.storyboard */; };
+		A70E43FA23C6FDB300FC9581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70E43F923C6FDB300FC9581 /* Assets.xcassets */; };
+		A70E43FD23C6FDB300FC9581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E43FB23C6FDB300FC9581 /* LaunchScreen.storyboard */; };
+		A70E440C23C721DB00FC9581 /* AgoraRtmKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */; };
+		A70E441223C72C8300FC9581 /* CallCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441123C72C8300FC9581 /* CallCenter.swift */; };
+		A70E441323C72E7500FC9581 /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */; };
+		A70E441423C72E7500FC9581 /* AgoraRtcKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A70E441823CC138F00FC9581 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441723CC138F00FC9581 /* NumberView.swift */; };
+		A70E441B23CC1E0F00FC9581 /* DialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441A23CC1E0F00FC9581 /* DialView.swift */; };
+		A70E441D23CC3D9500FC9581 /* DialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441C23CC3D9500FC9581 /* DialViewController.swift */; };
+		A70E441F23CC4F7A00FC9581 /* CallingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441E23CC4F7A00FC9581 /* CallingViewController.swift */; };
+		A70E442323CC518900FC9581 /* AureolaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E442223CC518900FC9581 /* AureolaView.swift */; };
+		A70E442523CC6AA900FC9581 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A70E442423CC6AA900FC9581 /* ring.mp3 */; };
+		A70E442723CC715100FC9581 /* AgoraRtm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E442623CC715100FC9581 /* AgoraRtm.swift */; };
+		A70E442A23CC719800FC9581 /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E442923CC719800FC9581 /* KeyCenter.swift */; };
+		A70E442D23CC731700FC9581 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E442C23CC731700FC9581 /* CoreTelephony.framework */; };
+		A70E442F23CC732B00FC9581 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E442E23CC732000FC9581 /* libc++.tbd */; };
+		A70E443123CC734100FC9581 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E443023CC733600FC9581 /* libresolv.tbd */; };
+		A70E443323CC734A00FC9581 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E443223CC734A00FC9581 /* SystemConfiguration.framework */; };
+		A756991C23CD640700401ED5 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A756991B23CD640700401ED5 /* Log.storyboard */; };
+		A756991F23CD642800401ED5 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756991D23CD642800401ED5 /* LogViewController.swift */; };
+		A756992023CD642800401ED5 /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756991E23CD642800401ED5 /* VideoChatViewController.swift */; };
+		A756992323CD6A8400401ED5 /* AGEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756992223CD6A8400401ED5 /* AGEError.swift */; };
+		A7A8CF1223CD61500089F4CF /* VideoChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A70E441523C72E7500FC9581 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A70E441423C72E7500FC9581 /* AgoraRtcKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A70E43ED23C6FDB200FC9581 /* OpenDuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70E43F023C6FDB200FC9581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A70E43F423C6FDB200FC9581 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A70E43F723C6FDB200FC9581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A70E43F923C6FDB300FC9581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A70E43FC23C6FDB300FC9581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A70E43FE23C6FDB300FC9581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtmKit.framework; sourceTree = "<group>"; };
+		A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcKit.framework; sourceTree = "<group>"; };
+		A70E441123C72C8300FC9581 /* CallCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCenter.swift; sourceTree = "<group>"; };
+		A70E441723CC138F00FC9581 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		A70E441A23CC1E0F00FC9581 /* DialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialView.swift; sourceTree = "<group>"; };
+		A70E441C23CC3D9500FC9581 /* DialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialViewController.swift; sourceTree = "<group>"; };
+		A70E441E23CC4F7A00FC9581 /* CallingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallingViewController.swift; sourceTree = "<group>"; };
+		A70E442223CC518900FC9581 /* AureolaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AureolaView.swift; sourceTree = "<group>"; };
+		A70E442423CC6AA900FC9581 /* ring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ring.mp3; path = ../../resource/ring.mp3; sourceTree = "<group>"; };
+		A70E442623CC715100FC9581 /* AgoraRtm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgoraRtm.swift; sourceTree = "<group>"; };
+		A70E442923CC719800FC9581 /* KeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
+		A70E442C23CC731700FC9581 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A70E442E23CC732000FC9581 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A70E443023CC733600FC9581 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A70E443223CC734A00FC9581 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A756991B23CD640700401ED5 /* Log.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Log.storyboard; sourceTree = "<group>"; };
+		A756991D23CD642800401ED5 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		A756991E23CD642800401ED5 /* VideoChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoChatViewController.swift; sourceTree = "<group>"; };
+		A756992223CD6A8400401ED5 /* AGEError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEError.swift; sourceTree = "<group>"; };
+		A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoChat.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A70E43EA23C6FDB200FC9581 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70E441323C72E7500FC9581 /* AgoraRtcKit.framework in Frameworks */,
+				A70E442D23CC731700FC9581 /* CoreTelephony.framework in Frameworks */,
+				A70E443123CC734100FC9581 /* libresolv.tbd in Frameworks */,
+				A70E442F23CC732B00FC9581 /* libc++.tbd in Frameworks */,
+				A70E443323CC734A00FC9581 /* SystemConfiguration.framework in Frameworks */,
+				A70E440C23C721DB00FC9581 /* AgoraRtmKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A70E43E423C6FDB200FC9581 = {
+			isa = PBXGroup;
+			children = (
+				A70E43EF23C6FDB200FC9581 /* OpenDuo */,
+				A70E43EE23C6FDB200FC9581 /* Products */,
+				A70E442B23CC731700FC9581 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A70E43EE23C6FDB200FC9581 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A70E43ED23C6FDB200FC9581 /* OpenDuo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A70E43EF23C6FDB200FC9581 /* OpenDuo */ = {
+			isa = PBXGroup;
+			children = (
+				A70E442123CC4FA300FC9581 /* Controllers */,
+				A70E442023CC4F8A00FC9581 /* Views */,
+				A70E442823CC717700FC9581 /* Models */,
+				A70E440E23C721DF00FC9581 /* Supporting Files */,
+				A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */,
+				A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */,
+			);
+			path = OpenDuo;
+			sourceTree = "<group>";
+		};
+		A70E440E23C721DF00FC9581 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A70E43F023C6FDB200FC9581 /* AppDelegate.swift */,
+				A70E43FE23C6FDB300FC9581 /* Info.plist */,
+				A70E442423CC6AA900FC9581 /* ring.mp3 */,
+				A70E43F923C6FDB300FC9581 /* Assets.xcassets */,
+				A70E43FB23C6FDB300FC9581 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A70E442023CC4F8A00FC9581 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A70E43F623C6FDB200FC9581 /* Main.storyboard */,
+				A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */,
+				A756991B23CD640700401ED5 /* Log.storyboard */,
+				A70E441723CC138F00FC9581 /* NumberView.swift */,
+				A70E442223CC518900FC9581 /* AureolaView.swift */,
+				A70E441A23CC1E0F00FC9581 /* DialView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A70E442123CC4FA300FC9581 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A70E43F423C6FDB200FC9581 /* MainViewController.swift */,
+				A70E441C23CC3D9500FC9581 /* DialViewController.swift */,
+				A70E441E23CC4F7A00FC9581 /* CallingViewController.swift */,
+				A756991E23CD642800401ED5 /* VideoChatViewController.swift */,
+				A756991D23CD642800401ED5 /* LogViewController.swift */,
+				A70E442623CC715100FC9581 /* AgoraRtm.swift */,
+				A70E441123C72C8300FC9581 /* CallCenter.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A70E442823CC717700FC9581 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A70E442923CC719800FC9581 /* KeyCenter.swift */,
+				A756992223CD6A8400401ED5 /* AGEError.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A70E442B23CC731700FC9581 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A70E443223CC734A00FC9581 /* SystemConfiguration.framework */,
+				A70E443023CC733600FC9581 /* libresolv.tbd */,
+				A70E442E23CC732000FC9581 /* libc++.tbd */,
+				A70E442C23CC731700FC9581 /* CoreTelephony.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A70E43EC23C6FDB200FC9581 /* OpenDuo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70E440123C6FDB300FC9581 /* Build configuration list for PBXNativeTarget "OpenDuo" */;
+			buildPhases = (
+				A70E43E923C6FDB200FC9581 /* Sources */,
+				A70E43EA23C6FDB200FC9581 /* Frameworks */,
+				A70E43EB23C6FDB200FC9581 /* Resources */,
+				A70E441523C72E7500FC9581 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenDuo;
+			productName = OpenDuo;
+			productReference = A70E43ED23C6FDB200FC9581 /* OpenDuo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70E43E523C6FDB200FC9581 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Agora;
+				TargetAttributes = {
+					A70E43EC23C6FDB200FC9581 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A70E43E823C6FDB200FC9581 /* Build configuration list for PBXProject "OpenDuo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A70E43E423C6FDB200FC9581;
+			productRefGroup = A70E43EE23C6FDB200FC9581 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A70E43EC23C6FDB200FC9581 /* OpenDuo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A70E43EB23C6FDB200FC9581 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70E43FD23C6FDB300FC9581 /* LaunchScreen.storyboard in Resources */,
+				A70E43FA23C6FDB300FC9581 /* Assets.xcassets in Resources */,
+				A70E442523CC6AA900FC9581 /* ring.mp3 in Resources */,
+				A70E43F823C6FDB200FC9581 /* Main.storyboard in Resources */,
+				A7A8CF1223CD61500089F4CF /* VideoChat.storyboard in Resources */,
+				A756991C23CD640700401ED5 /* Log.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70E43E923C6FDB200FC9581 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A756992323CD6A8400401ED5 /* AGEError.swift in Sources */,
+				A70E441223C72C8300FC9581 /* CallCenter.swift in Sources */,
+				A70E43F523C6FDB200FC9581 /* MainViewController.swift in Sources */,
+				A70E442A23CC719800FC9581 /* KeyCenter.swift in Sources */,
+				A756991F23CD642800401ED5 /* LogViewController.swift in Sources */,
+				A70E441D23CC3D9500FC9581 /* DialViewController.swift in Sources */,
+				A70E43F123C6FDB200FC9581 /* AppDelegate.swift in Sources */,
+				A70E442723CC715100FC9581 /* AgoraRtm.swift in Sources */,
+				A70E441823CC138F00FC9581 /* NumberView.swift in Sources */,
+				A70E441B23CC1E0F00FC9581 /* DialView.swift in Sources */,
+				A70E442323CC518900FC9581 /* AureolaView.swift in Sources */,
+				A756992023CD642800401ED5 /* VideoChatViewController.swift in Sources */,
+				A70E441F23CC4F7A00FC9581 /* CallingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A70E43F623C6FDB200FC9581 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A70E43F723C6FDB200FC9581 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A70E43FB23C6FDB300FC9581 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A70E43FC23C6FDB300FC9581 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A70E43FF23C6FDB300FC9581 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A70E440023C6FDB300FC9581 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A70E440223C6FDB300FC9581 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SW3CA7M752;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenDuo",
+				);
+				INFOPLIST_FILE = OpenDuo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.OpenDuo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraAppsDevProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A70E440323C6FDB300FC9581 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SW3CA7M752;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenDuo",
+				);
+				INFOPLIST_FILE = OpenDuo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.OpenDuo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraAppsDevProfile;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A70E43E823C6FDB200FC9581 /* Build configuration list for PBXProject "OpenDuo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70E43FF23C6FDB300FC9581 /* Debug */,
+				A70E440023C6FDB300FC9581 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70E440123C6FDB300FC9581 /* Build configuration list for PBXNativeTarget "OpenDuo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70E440223C6FDB300FC9581 /* Debug */,
+				A70E440323C6FDB300FC9581 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A70E43E523C6FDB200FC9581 /* Project object */;
+}
