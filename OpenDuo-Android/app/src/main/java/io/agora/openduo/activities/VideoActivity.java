@@ -2,10 +2,10 @@ package io.agora.openduo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -13,8 +13,11 @@ import androidx.appcompat.widget.AppCompatImageView;
 
 import io.agora.openduo.Constants;
 import io.agora.openduo.R;
+import io.agora.rtm.RemoteInvitation;
 
 public class VideoActivity extends BaseCallActivity {
+    private static final String TAG = VideoActivity.class.getSimpleName();
+
     private FrameLayout mLocalPreviewLayout;
     private FrameLayout mRemotePreviewLayout;
     private AppCompatImageView mMuteBtn;
@@ -115,5 +118,12 @@ public class VideoActivity extends BaseCallActivity {
     public void finish() {
         super.finish();
         leaveChannel();
+    }
+
+    @Override
+    public void onRemoteInvitationReceived(RemoteInvitation remoteInvitation) {
+        // Do not respond to any other calls
+        Log.i(TAG, "Ignore remote invitation from " +
+                remoteInvitation.getCallerId() + " while in calling");
     }
 }
