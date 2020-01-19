@@ -59,4 +59,12 @@
         <item name="android:textAlignment">gravity</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="PortraitAnimView">
+        <item name="android:layout_width">@dimen/default_peer_anim_outline</item>
+        <item name="android:layout_height">@dimen/default_peer_anim_outline</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:src">@drawable/anim_layer_drawable</item>
+    </style>
 </resources>

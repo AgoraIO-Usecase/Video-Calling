@@ -45,6 +45,9 @@
     <dimen name="peer_number_digit_size">38dp</dimen>
     <dimen name="call_action_button_margin_top">132dp</dimen>
     <dimen name="call_action_button_size">72dp</dimen>
+    <dimen name="default_peer_image_size">128dp</dimen>
+    <dimen name="default_peer_anim_outline">128dp</dimen>
+    <dimen name="default_peer_anim_size">172dp</dimen>
 
     <!-- Video Activity -->
     <dimen name="local_preview_width">140dp</dimen>

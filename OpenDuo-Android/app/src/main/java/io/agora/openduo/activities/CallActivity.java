@@ -5,6 +5,10 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,6 +37,7 @@ public class CallActivity extends BaseCallActivity implements View.OnClickListen
     private AppCompatImageView mAcceptBtn;
     private AppCompatImageView mHangupBtn;
     private MediaPlayer mPlayer;
+    private PortraitAnimator mAnimator;
 
     private boolean mInvitationSending;
     private boolean mInvitationReceiving;
@@ -92,6 +97,11 @@ public class CallActivity extends BaseCallActivity implements View.OnClickListen
             roleText.setText(R.string.calling_out);
             mAcceptBtn.setVisibility(View.GONE);
         }
+
+        mAnimator = new PortraitAnimator(
+                findViewById(R.id.anim_layer_1),
+                findViewById(R.id.anim_layer_2),
+                findViewById(R.id.anim_layer_3));
     }
 
     private boolean isCaller() {
@@ -104,19 +114,7 @@ public class CallActivity extends BaseCallActivity implements View.OnClickListen
 
     @Override
     protected void onGlobalLayoutCompleted() {
-        RelativeLayout peerLayout = findViewById(R.id.peer_image_layout);
-        ImageView layer1 = findViewById(R.id.anim_layer_1);
-        ImageView layer2 = findViewById(R.id.anim_layer_2);
-        ImageView layer3 = findViewById(R.id.anim_layer_3);
-        ImageView portrait = findViewById(R.id.peer_image);
-
-        int width = displayMetrics.widthPixels;
-        RelativeLayout.LayoutParams params =
-                (RelativeLayout.LayoutParams) portrait.getLayoutParams();
-        int portraitSize = width / 3;
-        params.width = portraitSize;
-        params.height = portraitSize;
-        portrait.setLayoutParams(params);
+        RelativeLayout.LayoutParams params;
 
         if (isCallee()) {
             RelativeLayout actionLayout = findViewById(R.id.action_button_layout);
@@ -196,6 +194,18 @@ public class CallActivity extends BaseCallActivity implements View.OnClickListen
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAnimator.start();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mAnimator.stop();
     }
 
     @Override
@@ -279,5 +289,71 @@ public class CallActivity extends BaseCallActivity implements View.OnClickListen
         }
 
         super.finish();
+    }
+
+    private class PortraitAnimator {
+        static final int ANIM_DURATION = 3000;
+
+        private Animation mAnim1;
+        private Animation mAnim2;
+        private Animation mAnim3;
+        private View mLayer1;
+        private View mLayer2;
+        private View mLayer3;
+        private boolean mIsRunning;
+
+        PortraitAnimator(View layer1, View layer2, View layer3) {
+            mLayer1 = layer1;
+            mLayer2 = layer2;
+            mLayer3 = layer3;
+            mAnim1 = buildAnimation(0);
+            mAnim2 = buildAnimation(1000);
+            mAnim3 = buildAnimation(2000);
+        }
+
+        private AnimationSet buildAnimation(int startOffset) {
+            AnimationSet set = new AnimationSet(true);
+            AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
+            alphaAnimation.setDuration(ANIM_DURATION);
+            alphaAnimation.setStartOffset(startOffset);
+            alphaAnimation.setRepeatCount(Animation.INFINITE);
+            alphaAnimation.setRepeatMode(Animation.RESTART);
+            alphaAnimation.setFillAfter(true);
+
+            ScaleAnimation scaleAnimation = new ScaleAnimation(
+                    1.0f, 1.3f, 1.0f, 1.3f,
+                    ScaleAnimation.RELATIVE_TO_SELF, 0.5f,
+                    ScaleAnimation.RELATIVE_TO_SELF, 0.5f);
+            scaleAnimation.setDuration(ANIM_DURATION);
+            scaleAnimation.setStartOffset(startOffset);
+            scaleAnimation.setRepeatCount(Animation.INFINITE);
+            scaleAnimation.setRepeatMode(Animation.RESTART);
+            scaleAnimation.setFillAfter(true);
+
+            set.addAnimation(alphaAnimation);
+            set.addAnimation(scaleAnimation);
+            return set;
+        }
+
+        void start() {
+            if (!mIsRunning) {
+                mIsRunning = true;
+                mLayer1.setVisibility(View.VISIBLE);
+                mLayer2.setVisibility(View.VISIBLE);
+                mLayer3.setVisibility(View.VISIBLE);
+                mLayer1.startAnimation(mAnim1);
+                mLayer2.startAnimation(mAnim2);
+                mLayer3.startAnimation(mAnim3);
+            }
+        }
+
+        void stop() {
+            mLayer1.clearAnimation();
+            mLayer2.clearAnimation();
+            mLayer3.clearAnimation();
+            mLayer1.setVisibility(View.GONE);
+            mLayer2.setVisibility(View.GONE);
+            mLayer3.setVisibility(View.GONE);
+        }
     }
 }

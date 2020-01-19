@@ -9,28 +9,22 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:id="@+id/peer_image_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/default_peer_anim_size"
+            android:layout_height="@dimen/default_peer_anim_size"
             android:layout_centerHorizontal="true">
             <ImageView
                 android:id="@+id/anim_layer_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"/>
+                style="@style/PortraitAnimView"/>
             <ImageView
                 android:id="@+id/anim_layer_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"/>
+                style="@style/PortraitAnimView"/>
             <ImageView
                 android:id="@+id/anim_layer_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"/>
+                style="@style/PortraitAnimView"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/peer_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/default_peer_image_size"
+                android:layout_height="@dimen/default_peer_image_size"
                 android:layout_centerInParent="true"/>
         </RelativeLayout>
 
