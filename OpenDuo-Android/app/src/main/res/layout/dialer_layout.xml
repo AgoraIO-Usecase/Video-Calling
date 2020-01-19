@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/call_number_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout style="@style/CallNumberView">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/call_number_text1"
+                style="@style/CallNumberText"/>
+            <View style="@style/CallNumberDivider"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/CallNumberView">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/call_number_text2"
+                style="@style/CallNumberText"/>
+            <View style="@style/CallNumberDivider"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/CallNumberView">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/call_number_text3"
+                style="@style/CallNumberText"/>
+            <View style="@style/CallNumberDivider"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/CallNumberView">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/call_number_text4"
+                style="@style/CallNumberText"/>
+            <View style="@style/CallNumberDivider"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dial_number_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/call_number_layout"
+        android:layout_marginTop="@dimen/margin_larger">
+
+        <LinearLayout style="@style/DialNumberRowLayout">
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_1"
+                    android:src="@drawable/num_1"
+                    style="@style/DialNumberImage"
+                    android:layout_marginBottom="@dimen/dialer_number_margin_bottom"
+                    android:tag="1"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_2"
+                    android:src="@drawable/num_2"
+                    style="@style/DialNumberImage"
+                    android:tag="2"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_3"
+                    android:src="@drawable/num_3"
+                    style="@style/DialNumberImage"
+                    android:tag="3"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/DialNumberRowLayout">
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_4"
+                    android:src="@drawable/num_4"
+                    style="@style/DialNumberImage"
+                    android:tag="4"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_5"
+                    android:src="@drawable/num_5"
+                    style="@style/DialNumberImage"
+                    android:tag="5"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_6"
+                    android:src="@drawable/num_6"
+                    style="@style/DialNumberImage"
+                    android:tag="6"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/DialNumberRowLayout">
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_7"
+                    android:src="@drawable/num_7"
+                    style="@style/DialNumberImage"
+                    android:tag="7"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_8"
+                    android:src="@drawable/num_8"
+                    style="@style/DialNumberImage"
+                    android:tag="8"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_9"
+                    android:src="@drawable/num_9"
+                    style="@style/DialNumberImage"
+                    android:tag="9"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/DialNumberRowLayout">
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:src="@drawable/star"
+                    style="@style/DialNumberImage"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dial_number_0"
+                    android:src="@drawable/num_0"
+                    style="@style/DialNumberImage"
+                    android:tag="0"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:src="@drawable/sign"
+                    style="@style/DialNumberImage"
+                    android:layout_marginBottom="@dimen/dialer_number_margin_bottom"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/DialNumberRowLayout"
+            android:layout_marginTop="@dimen/margin_larger">
+            <RelativeLayout style="@style/DialNumberView"/>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dialer_start_call"
+                    android:layout_width="@dimen/start_call_btn_size"
+                    android:layout_height="@dimen/start_call_btn_size"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/btn_startcall"/>
+            </RelativeLayout>
+            <RelativeLayout style="@style/DialNumberView">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dialer_backspace"
+                    android:layout_width="@dimen/dialer_backspace_width"
+                    android:layout_height="@dimen/dialer_backspace_height"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/backspace"
+                    android:scaleType="fitCenter"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

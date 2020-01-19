@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_larger">24sp</dimen>
+    <dimen name="text_size_largest">32sp</dimen>
+
+    <dimen name="margin_smaller">8dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_medium">18dp</dimen>
+    <dimen name="margin_large">28dp</dimen>
+    <dimen name="margin_larger">42dp</dimen>
+
+    <!-- Main Activity -->
+    <dimen name="text_scale_x">1.1</dimen>
+    <dimen name="setting_btn_margin_top">12dp</dimen>
+    <dimen name="setting_btn_margin_right">18dp</dimen>
+    <dimen name="setting_btn_size">36dp</dimen>
+    <dimen name="logo_size">158dp</dimen>
+    <dimen name="logo_margin_bottom">36dp</dimen>
+    <dimen name="edit_margin_bottom">42dp</dimen>
+    <dimen name="edit_text_padding">16dp</dimen>
+    <dimen name="start_broadcast_height">48dp</dimen>
+    <dimen name="start_broadcast_radius">25dp</dimen>
+    <dimen name="start_broadcast_padding">64dp</dimen>
+    <dimen name="info_margin_bottom">36dp</dimen>
+
+    <!-- Dialer Activity -->
+    <dimen name="underscore_height">2dp</dimen>
+    <dimen name="call_number_view_width">48dp</dimen>
+    <dimen name="call_number_view_height">72dp</dimen>
+    <dimen name="call_number_text_size">36dp</dimen>
+    <dimen name="dialer_number_width">42dp</dimen>
+    <dimen name="dialer_number_height">56dp</dimen>
+    <dimen name="dialer_number_margin_bottom">24dp</dimen>
+    <dimen name="start_call_btn_size">82dp</dimen>
+    <dimen name="dialer_backspace_width">38dp</dimen>
+    <dimen name="dialer_backspace_height">27dp</dimen>
+
+    <!-- Calling Activity -->
+    <dimen name="peer_number_digit_width">38dp</dimen>
+    <dimen name="peer_number_digit_height">44dp</dimen>
+    <dimen name="peer_number_digit_size">38dp</dimen>
+    <dimen name="call_action_button_margin_top">132dp</dimen>
+    <dimen name="call_action_button_size">72dp</dimen>
+    <dimen name="default_peer_image_size">128dp</dimen>
+    <dimen name="default_peer_anim_outline">128dp</dimen>
+    <dimen name="default_peer_anim_size">172dp</dimen>
+
+    <!-- Video Activity -->
+    <dimen name="local_preview_width">140dp</dimen>
+    <dimen name="local_preview_height">220dp</dimen>
+    <dimen name="video_button_size_large">82dp</dimen>
+    <dimen name="video_button_size_small">58dp</dimen>
+</resources>

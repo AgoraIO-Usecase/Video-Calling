@@ -1,0 +1,70 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CallNumberView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/call_number_view_height</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="CallNumberText">
+        <item name="android:layout_width">@dimen/call_number_view_width</item>
+        <item name="android:layout_height">@dimen/call_number_view_height</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/call_number_text_size</item>
+    </style>
+
+    <style name="CallNumberDivider">
+        <item name="android:layout_width">@dimen/call_number_view_width</item>
+        <item name="android:layout_height">@dimen/underscore_height</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/blue_alpha_2</item>
+    </style>
+
+    <style name="DialNumberView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="DialNumberRowLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dialer_number_height</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">@dimen/margin_large</item>
+    </style>
+
+    <style name="DialNumberImage">
+        <item name="android:layout_width">@dimen/dialer_number_width</item>
+        <item name="android:layout_height">@dimen/dialer_number_height</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="PeerNumDigitText">
+        <item name="android:layout_width">@dimen/peer_number_digit_width</item>
+        <item name="android:layout_height">@dimen/peer_number_digit_height</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/peer_number_digit_size</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="PortraitAnimView">
+        <item name="android:layout_width">@dimen/default_peer_anim_outline</item>
+        <item name="android:layout_height">@dimen/default_peer_anim_outline</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:src">@drawable/anim_layer_drawable</item>
+    </style>
+</resources>
