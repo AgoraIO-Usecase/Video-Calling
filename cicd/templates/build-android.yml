@@ -11,11 +11,13 @@ jobs:
       
     variables:
       - group: AgoraKeys
+      - group: RTM
       
     steps:
-      - script: cd ${{ parameters.project }} && ls && python ci.env.py
+      - script: cd ${{ parameters.project }} && ls && python ci.env.py && chmod +x ./rtm.sh &&./rtm.sh
         env:
           AGORA_APP_ID: $(agora.appId)
+          RTM_SDK_LINK: $(rtmsdk.link)
 
       - task: Gradle@2
         inputs:

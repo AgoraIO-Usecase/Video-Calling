@@ -12,10 +12,11 @@ pool:
 
 variables:
 - group: AgoraKeys
+- group: RTM
 
 jobs:
 
-- template: cici/templates/build-android.yml
+- template: cicd/templates/build-android.yml
   parameters:
     project: 'OpenDuo-Android'
     name: 'OpenDuoAndroid'
