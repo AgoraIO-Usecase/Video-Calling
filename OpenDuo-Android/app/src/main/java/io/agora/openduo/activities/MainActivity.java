@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -19,8 +20,13 @@ import io.agora.openduo.R;
 public class MainActivity extends BaseCallActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    // Permission request code of any integer value
-    private static final int PERMISSION_REQ_CODE = 1 << 4;
+    // Permission request when we want to go to next activity
+    // when all necessary permissions are granted.
+    private static final int PERMISSION_REQ_FORWARD = 1 << 4;
+
+    // Permission request when we want to stay in
+    // current activity even if all permissions are granted.
+    private static final int PERMISSION_REQ_STAY = 1 << 3;
 
     private String[] PERMISSIONS = {
             Manifest.permission.RECORD_AUDIO,
@@ -36,6 +42,7 @@ public class MainActivity extends BaseCallActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setIdentifier();
+        checkPermissions();
     }
 
     @Override
@@ -72,24 +79,26 @@ public class MainActivity extends BaseCallActivity {
         idText.setText(identifier);
     }
 
-    public void onStartCall(View view) {
-        checkPermission();
+    private void checkPermissions() {
+        if (!permissionArrayGranted(null)) {
+            requestPermissions(PERMISSION_REQ_STAY);
+        }
     }
 
-    private void checkPermission() {
+    private boolean permissionArrayGranted(@Nullable String[] permissions) {
+        String[] permissionArray = permissions;
+        if (permissionArray == null) {
+            permissionArray = PERMISSIONS;
+        }
+
         boolean granted = true;
-        for (String per : PERMISSIONS) {
+        for (String per : permissionArray) {
             if (!permissionGranted(per)) {
                 granted = false;
                 break;
             }
         }
-
-        if (granted) {
-            gotoDialerActivity();
-        } else {
-            requestPermissions();
-        }
+        return granted;
     }
 
     private boolean permissionGranted(String permission) {
@@ -97,26 +106,26 @@ public class MainActivity extends BaseCallActivity {
                 this, permission) == PackageManager.PERMISSION_GRANTED;
     }
 
-    private void requestPermissions() {
-        ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_REQ_CODE);
+    private void requestPermissions(int request) {
+        ActivityCompat.requestPermissions(this, PERMISSIONS, request);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[], @NonNull int[] grantResults) {
-        if (requestCode == PERMISSION_REQ_CODE) {
-            boolean granted = true;
-            for (int result : grantResults) {
-                granted = (result == PackageManager.PERMISSION_GRANTED);
-                if (!granted) break;
-            }
-
-            if (granted) {
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == PERMISSION_REQ_FORWARD ||
+                requestCode == PERMISSION_REQ_STAY) {
+            boolean granted = permissionArrayGranted(permissions);
+            if (granted && requestCode == PERMISSION_REQ_FORWARD) {
                 gotoDialerActivity();
-            } else {
+            } else if (!granted) {
                 toastNeedPermissions();
             }
         }
+    }
+
+    public void onStartCall(View view) {
+        requestPermissions(PERMISSION_REQ_FORWARD);
     }
 
     private void toastNeedPermissions() {
