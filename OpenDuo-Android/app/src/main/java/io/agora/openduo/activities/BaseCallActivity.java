@@ -147,9 +147,8 @@ public abstract class BaseCallActivity extends BaseRtcActivity implements RtmCha
 
     @Override
     public void onLocalInvitationAccepted(LocalInvitation localInvitation, String response) {
-        if (mActivityVisible) {
-            gotoVideoActivity(localInvitation.getContent(), localInvitation.getCalleeId());
-        }
+        Log.i("BaseActivity", "onLocalInvitationAccepted by peer:" + localInvitation.getCalleeId());
+        gotoVideoActivity(localInvitation.getContent(), localInvitation.getCalleeId());
     }
 
     @Override
@@ -165,22 +164,20 @@ public abstract class BaseCallActivity extends BaseRtcActivity implements RtmCha
     @Override
     public void onLocalInvitationFailure(LocalInvitation localInvitation, int errorCode) {
         super.onLocalInvitationFailure(localInvitation, errorCode);
-        Log.w(TAG, "onLocalInvitationFailure:" + errorCode);
+        Log.w("BaseActivity", "onLocalInvitationFailure:" + errorCode);
     }
 
     @Override
     public void onRemoteInvitationReceived(RemoteInvitation remoteInvitation) {
-        if (mActivityVisible) {
-            global().setRemoteInvitation(remoteInvitation);
-            gotoCallingActivity(remoteInvitation.getContent(), remoteInvitation.getCallerId(), Constants.ROLE_CALLEE);
-        }
+        Log.i("BaseActivity", "onRemoteInvitationReceived from caller:" + remoteInvitation.getCallerId());
+        global().setRemoteInvitation(remoteInvitation);
+        gotoCallingActivity(remoteInvitation.getContent(), remoteInvitation.getCallerId(), Constants.ROLE_CALLEE);
     }
 
     @Override
     public void onRemoteInvitationAccepted(RemoteInvitation remoteInvitation) {
-        if (mActivityVisible) {
-            gotoVideoActivity(remoteInvitation.getContent(), remoteInvitation.getCallerId());
-        }
+        Log.i("BaseActivity", "onRemoteInvitationAccepted from caller:" + remoteInvitation.getCallerId());
+        gotoVideoActivity(remoteInvitation.getContent(), remoteInvitation.getCallerId());
     }
 
     @Override
@@ -196,7 +193,7 @@ public abstract class BaseCallActivity extends BaseRtcActivity implements RtmCha
     @Override
     public void onRemoteInvitationFailure(RemoteInvitation remoteInvitation, int errorCode) {
         super.onRemoteInvitationFailure(remoteInvitation, errorCode);
-        Log.w(TAG, "onRemoteInvitationFailure:" + errorCode);
+        Log.w("BaseActivity", "onRemoteInvitationFailure:" + errorCode);
     }
 
     public void gotoVideoActivity(String channel, String peer) {
