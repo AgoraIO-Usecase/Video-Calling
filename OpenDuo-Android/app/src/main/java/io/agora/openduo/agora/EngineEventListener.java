@@ -27,29 +27,33 @@ public class EngineEventListener extends IRtcEngineEventHandler
 
     @Override
     public void onJoinChannelSuccess(String channel, int uid, int elapsed) {
-        for (IEventListener listener : mListeners) {
-            listener.onJoinChannelSuccess(channel, uid, elapsed);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onJoinChannelSuccess(channel, uid, elapsed);
         }
     }
 
     @Override
     public void onUserJoined(int uid, int elapsed) {
-        for (IEventListener listener : mListeners) {
-            listener.onUserJoined(uid, elapsed);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onUserJoined(uid, elapsed);
         }
     }
 
     @Override
     public void onUserOffline(int uid, int reason) {
-        for (IEventListener listener : mListeners) {
-            listener.onUserOffline(uid, reason);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onUserOffline(uid, reason);
         }
     }
 
     @Override
     public void onConnectionStateChanged(int status, int reason) {
-        for (IEventListener listener : mListeners) {
-            listener.onConnectionStateChanged(status, reason);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onConnectionStateChanged(status, reason);
         }
     }
 
@@ -65,78 +69,89 @@ public class EngineEventListener extends IRtcEngineEventHandler
 
     @Override
     public void onPeersOnlineStatusChanged(Map<String, Integer> map) {
-        for (IEventListener listener : mListeners) {
-            listener.onPeersOnlineStatusChanged(map);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onPeersOnlineStatusChanged(map);
         }
     }
 
     @Override
     public void onLocalInvitationReceivedByPeer(LocalInvitation localInvitation) {
-        for (IEventListener listener : mListeners) {
-            listener.onLocalInvitationReceived(localInvitation);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onLocalInvitationReceived(localInvitation);
         }
     }
 
     @Override
     public void onLocalInvitationAccepted(LocalInvitation localInvitation, String response) {
-        for (IEventListener listener : mListeners) {
-            listener.onLocalInvitationAccepted(localInvitation, response);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onLocalInvitationAccepted(localInvitation, response);
         }
     }
 
     @Override
     public void onLocalInvitationRefused(LocalInvitation localInvitation, String response) {
-        for (IEventListener listener : mListeners) {
-            listener.onLocalInvitationRefused(localInvitation, response);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onLocalInvitationRefused(localInvitation, response);
         }
     }
 
     @Override
     public void onLocalInvitationCanceled(LocalInvitation localInvitation) {
-        for (IEventListener listener : mListeners) {
-            listener.onLocalInvitationCanceled(localInvitation);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onLocalInvitationCanceled(localInvitation);
         }
     }
 
     @Override
     public void onLocalInvitationFailure(LocalInvitation localInvitation, int errorCode) {
-        for (IEventListener listener : mListeners) {
-            listener.onLocalInvitationFailure(localInvitation, errorCode);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onLocalInvitationFailure(localInvitation, errorCode);
         }
     }
 
     @Override
     public void onRemoteInvitationReceived(RemoteInvitation remoteInvitation) {
-        for (IEventListener listener : mListeners) {
-            listener.onRemoteInvitationReceived(remoteInvitation);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onRemoteInvitationReceived(remoteInvitation);
         }
     }
 
     @Override
     public void onRemoteInvitationAccepted(RemoteInvitation remoteInvitation) {
-        for (IEventListener listener : mListeners) {
-            listener.onRemoteInvitationAccepted(remoteInvitation);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onRemoteInvitationAccepted(remoteInvitation);
         }
     }
 
     @Override
     public void onRemoteInvitationRefused(RemoteInvitation remoteInvitation) {
-        for (IEventListener listener : mListeners) {
-            listener.onRemoteInvitationRefused(remoteInvitation);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onRemoteInvitationRefused(remoteInvitation);
         }
     }
 
     @Override
     public void onRemoteInvitationCanceled(RemoteInvitation remoteInvitation) {
-        for (IEventListener listener : mListeners) {
-            listener.onRemoteInvitationCanceled(remoteInvitation);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onRemoteInvitationCanceled(remoteInvitation);
         }
     }
 
     @Override
     public void onRemoteInvitationFailure(RemoteInvitation remoteInvitation, int errorCode) {
-        for (IEventListener listener : mListeners) {
-            listener.onRemoteInvitationFailure(remoteInvitation, errorCode);
+        int size = mListeners.size();
+        if (size > 0) {
+            mListeners.get(size - 1).onRemoteInvitationFailure(remoteInvitation, errorCode);
         }
     }
 }

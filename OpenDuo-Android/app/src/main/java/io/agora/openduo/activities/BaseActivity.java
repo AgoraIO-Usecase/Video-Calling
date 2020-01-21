@@ -28,8 +28,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IEventLi
     protected int statusBarHeight;
     protected DisplayMetrics displayMetrics = new DisplayMetrics();
 
-    protected boolean mActivityVisible;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +36,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IEventLi
         setGlobalLayoutListener();
         getDisplayMetrics();
         initStatusBarHeight();
-        registerEventListener(this);
     }
 
     private void setGlobalLayoutListener() {
@@ -76,13 +73,13 @@ public abstract class BaseActivity extends AppCompatActivity implements IEventLi
     @Override
     public void onStart() {
         super.onStart();
-        mActivityVisible = true;
+        registerEventListener(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        mActivityVisible = false;
+        removeEventListener(this);
     }
 
     public OpenDuoApplication application() {
