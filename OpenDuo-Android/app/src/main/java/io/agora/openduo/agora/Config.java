@@ -19,7 +19,7 @@ import io.agora.openduo.utils.UserUtil;
 import io.agora.rtc.video.VideoEncoderConfiguration;
 
 public class Config {
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     private static final boolean FLAG_USE_SYSTEM_CALL_UI = false;
 
