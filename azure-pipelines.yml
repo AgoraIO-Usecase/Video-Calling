@@ -11,8 +11,8 @@ pool:
   vmImage: 'macos-latest'
 
 variables:
-- group: AgoraKeys
-- group: RTM
+  iOSRTCSDK: 'https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_1_FULL.zip'
+  iOSRTMSDK: 'https://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v1_2_2.zip?_ga=2.105071684.658709580.1579673670-5559409.1503304822'
 
 jobs:
 
@@ -20,3 +20,11 @@ jobs:
   parameters:
     project: 'OpenDuo-Android'
     name: 'OpenDuoAndroid'
+
+- template: cicd/templates/build-ios.yml
+  parameters:
+    displayName: 'OpenDuo-iOS'
+    workingDirectory: 'OpenDuo-iOS'
+    scheme: 'OpenDuo'
+    rtcsdkurl: $(iOSRTCSDK)
+    rtmsdkurl: $(iOSRTMSDK)
