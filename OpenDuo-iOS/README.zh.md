@@ -1,4 +1,4 @@
-# Open Duo iOS for Objective C
+# Agora OpenDuo for iOS
 
 *Read this in other languages: [English](README.md)*
 

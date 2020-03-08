@@ -15,7 +15,6 @@
 		A70E440C23C721DB00FC9581 /* AgoraRtmKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */; };
 		A70E441223C72C8300FC9581 /* CallCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441123C72C8300FC9581 /* CallCenter.swift */; };
 		A70E441323C72E7500FC9581 /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */; };
-		A70E441423C72E7500FC9581 /* AgoraRtcKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A70E441823CC138F00FC9581 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441723CC138F00FC9581 /* NumberView.swift */; };
 		A70E441B23CC1E0F00FC9581 /* DialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441A23CC1E0F00FC9581 /* DialView.swift */; };
 		A70E441D23CC3D9500FC9581 /* DialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441C23CC3D9500FC9581 /* DialViewController.swift */; };
@@ -32,22 +31,16 @@
 		A756991F23CD642800401ED5 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756991D23CD642800401ED5 /* LogViewController.swift */; };
 		A756992023CD642800401ED5 /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756991E23CD642800401ED5 /* VideoChatViewController.swift */; };
 		A756992323CD6A8400401ED5 /* AGEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756992223CD6A8400401ED5 /* AGEError.swift */; };
+		A773BD3F2408E68A003ECBFD /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD3E2408E689003ECBFD /* VideoToolbox.framework */; };
+		A773BD412408E68E003ECBFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD402408E68E003ECBFD /* AVFoundation.framework */; };
+		A773BD432408E694003ECBFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD422408E694003ECBFD /* AudioToolbox.framework */; };
+		A773BD442408E6A2003ECBFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E442C23CC731700FC9581 /* CoreTelephony.framework */; };
+		A773BD482408E6AF003ECBFD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD452408E6AF003ECBFD /* CoreMedia.framework */; };
+		A773BD492408E6AF003ECBFD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD462408E6AF003ECBFD /* CoreMotion.framework */; };
+		A773BD4A2408E6AF003ECBFD /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD472408E6AF003ECBFD /* CoreML.framework */; };
+		A773BD4C2408E6C7003ECBFD /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD4B2408E6C7003ECBFD /* Accelerate.framework */; };
 		A7A8CF1223CD61500089F4CF /* VideoChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A70E441523C72E7500FC9581 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A70E441423C72E7500FC9581 /* AgoraRtcKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A70E43ED23C6FDB200FC9581 /* OpenDuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +69,13 @@
 		A756991D23CD642800401ED5 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A756991E23CD642800401ED5 /* VideoChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoChatViewController.swift; sourceTree = "<group>"; };
 		A756992223CD6A8400401ED5 /* AGEError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEError.swift; sourceTree = "<group>"; };
+		A773BD3E2408E689003ECBFD /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		A773BD402408E68E003ECBFD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A773BD422408E694003ECBFD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A773BD452408E6AF003ECBFD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A773BD462408E6AF003ECBFD /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		A773BD472408E6AF003ECBFD /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		A773BD4B2408E6C7003ECBFD /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoChat.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,11 +84,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A773BD412408E68E003ECBFD /* AVFoundation.framework in Frameworks */,
+				A773BD4C2408E6C7003ECBFD /* Accelerate.framework in Frameworks */,
+				A773BD482408E6AF003ECBFD /* CoreMedia.framework in Frameworks */,
 				A70E441323C72E7500FC9581 /* AgoraRtcKit.framework in Frameworks */,
+				A773BD442408E6A2003ECBFD /* CoreTelephony.framework in Frameworks */,
+				A773BD3F2408E68A003ECBFD /* VideoToolbox.framework in Frameworks */,
 				A70E442D23CC731700FC9581 /* CoreTelephony.framework in Frameworks */,
 				A70E443123CC734100FC9581 /* libresolv.tbd in Frameworks */,
+				A773BD492408E6AF003ECBFD /* CoreMotion.framework in Frameworks */,
+				A773BD432408E694003ECBFD /* AudioToolbox.framework in Frameworks */,
 				A70E442F23CC732B00FC9581 /* libc++.tbd in Frameworks */,
 				A70E443323CC734A00FC9581 /* SystemConfiguration.framework in Frameworks */,
+				A773BD4A2408E6AF003ECBFD /* CoreML.framework in Frameworks */,
 				A70E440C23C721DB00FC9581 /* AgoraRtmKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +185,13 @@
 		A70E442B23CC731700FC9581 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A773BD4B2408E6C7003ECBFD /* Accelerate.framework */,
+				A773BD452408E6AF003ECBFD /* CoreMedia.framework */,
+				A773BD472408E6AF003ECBFD /* CoreML.framework */,
+				A773BD462408E6AF003ECBFD /* CoreMotion.framework */,
+				A773BD422408E694003ECBFD /* AudioToolbox.framework */,
+				A773BD402408E68E003ECBFD /* AVFoundation.framework */,
+				A773BD3E2408E689003ECBFD /* VideoToolbox.framework */,
 				A70E443223CC734A00FC9581 /* SystemConfiguration.framework */,
 				A70E443023CC733600FC9581 /* libresolv.tbd */,
 				A70E442E23CC732000FC9581 /* libc++.tbd */,
@@ -195,7 +210,6 @@
 				A70E43E923C6FDB200FC9581 /* Sources */,
 				A70E43EA23C6FDB200FC9581 /* Frameworks */,
 				A70E43EB23C6FDB200FC9581 /* Resources */,
-				A70E441523C72E7500FC9581 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -4,26 +4,16 @@ import re
 import os
 
 def main():
-    RTC_SDK_URL = ""
-    RTM_SDK_URL = ""
-    
-    if "RTC_SDK_URL" in os.environ:
-        RTC_SDK_URL = os.environ["RTC_SDK_URL"]
+    RTM_SDK_URL = "https://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v1_2_2.zip?_ga=2.86470680.1650799636.1583667533-5559409.1503304822"
     
     if "RTM_SDK_URL" in os.environ:
-        RTC_SDK_URL = os.environ["RTM_SDK_URL"]
-    
-    TARGET_RTC_LIBS_ZIP = "agora_rtc_sdk.zip"
-    TARGET_RTC_INTERNAL_FOLDER = "agora_rtc_sdk"
+        RTM_SDK_URL = os.environ["RTM_SDK_URL"]
     
     TARGET_RTM_LIBS_ZIP = "agora_rtm_sdk.zip"
     TARGET_RTM_INTERNAL_FOLDER = "agora_rtm_sdk"
     
-    RTC_ZIP_STRUCTURE_FOLDER = "Agora_Native_SDK_for_iOS_FULL/libs"
     RTM_ZIP_STRUCTURE_FOLDER = "Agora_RTM_SDK_for_iOS/libs"
     
-    CRY_FRAMEWORK_NAME = "AgoraRtcCryptoLoader.framework"
-    RTC_FRAMEWORK_NAME = "AgoraRtcKit.framework"
     RTM_FRAMEWORK_NAME = "AgoraRtmKit.framework"
     
     APP_NAME = "OpenDuo"
@@ -34,16 +24,6 @@ def main():
     rm = "rm -r " + "*.zip"
     os.system(rm)
     
-    rm = "rm -r " + APP_NAME + "/" + "*.framework"
-    os.system(rm)
-    
-    # RTC SDK Download
-    wget = "wget -q " + RTC_SDK_URL + " -O " + TARGET_RTC_LIBS_ZIP
-    os.system(wget)
-    
-    unzip = "unzip -q " + TARGET_RTC_LIBS_ZIP + " -d " + TARGET_RTC_INTERNAL_FOLDER
-    os.system(unzip)
-    
     # RTM SDK Download
     wget = "wget -q " + RTM_SDK_URL + " -O " + TARGET_RTM_LIBS_ZIP
     os.system(wget)
@@ -52,9 +32,6 @@ def main():
     os.system(unzip)
     
     # mv sdks
-    mv = "mv -f " + TARGET_RTC_INTERNAL_FOLDER + "/" + RTC_ZIP_STRUCTURE_FOLDER + "/" + "*.framework" + " \"" + APP_NAME +"\""
-    os.system(mv)
-
     mv = "mv -f " + TARGET_RTM_INTERNAL_FOLDER + "/" + RTM_ZIP_STRUCTURE_FOLDER + "/" + "*.framework" + " \"" + APP_NAME +"\""
     os.system(mv)
 
@@ -76,7 +53,6 @@ def main():
     f.seek(0)
     f.write(contentNew)
     f.truncate()
-
 
 if __name__ == "__main__":
     main()
