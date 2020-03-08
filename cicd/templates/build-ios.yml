@@ -16,10 +16,11 @@ jobs:
       - group: AgoraKeys
 
     steps:
+      - script: cd cicd/scripts && chmod +x sdkdownload.sh && ./sdkdownload.sh ${{ parameters.rtcsdkurl }} ${{ parameters.workingDirectory}}/${{ parameters.scheme }}
+    
       - script: cd ${{ parameters.workingDirectory }} && ls && python ci.env.py
         env:
           AGORA_APP_ID: $(agora.appId)
-          RTC_SDK_URL: ${{ parameters.rtcsdkurl }}
           RTM_SDK_URL: ${{ parameters.rtmsdkurl }}
 
       - task: InstallAppleCertificate@2
