@@ -29,8 +29,8 @@ public class Config {
     }
 
     private void initUserId(Context context) {
-        int currentId = SPUtils.getUserId(context);
-        if (currentId == SPUtils.NO_USER) {
+        String currentId = SPUtils.getUserId(context);
+        if (currentId == null) {
             currentId = UserUtil.randomUserId();
             SPUtils.saveUserId(context, currentId);
         }
@@ -44,7 +44,7 @@ public class Config {
         }
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return mUserId;
     }
 
@@ -114,7 +114,7 @@ public class Config {
         }
     }
 
-    private int mUserId;
+    private String mUserId;
 
     private boolean mUseSystemCall;
 
