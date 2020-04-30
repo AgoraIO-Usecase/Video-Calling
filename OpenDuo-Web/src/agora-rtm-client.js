@@ -12,11 +12,15 @@ export default class RTMClient {
     this._invitation = null
     this._remoteInvitation = null
     this.eventBus = new EventEmitter() 
+
+    //This status is used to control whether the phone can be accessed
+    //The 'onLine' is ok.
     this.status = 'offLine' //onLine, offLine, calling, meeting
 
     this.peerInvitation()
   }
 
+  //login uid
   login(uid) {
     this._uid = uid
     return this._client.login({
@@ -27,47 +31,62 @@ export default class RTMClient {
     })
   }
 
+  //Query login status of peers and return asynchronous
   inquire(peerIds) {
     return this._client.queryPeersOnlineStatus(peerIds)  
   }
-  //a拨打给b，a进入呼叫中页面。
-  //b判断自己状态是否在空闲中（也就是在线），
-  //如果不是空闲，调用挂断。b不会进入被呼叫中页面
 
   localInvitation(calleeId) {
     this._invitation = null
+
+    //Create a local invitation
     this._invitation = this._client.createLocalInvitation(calleeId)
+
+    //Local monitoring and inviting peers
     this._invitation.on('LocalInvitationReceivedByPeer', () => {
       log('Peers receive calls')
       this.status = 'calling'
       this.eventBus.emit('LocalInvitationReceivedByPeer')
     })
+
+    //Cancel call invitation
     this._invitation.on('LocalInvitationCanceled', () => {
       log('Cancel call invitation')
       this.eventBus.emit('LocalInvitationCanceled')
     })
+
+    //Called accepted call invitation
     this._invitation.on('LocalInvitationAccepted', () => {
       log('Peers accept invitations to call')
       this.status = 'meeting'
       this.eventBus.emit('LocalInvitationAccepted')
     })
+
+    //Called down
     this._invitation.on('LocalInvitationRefused', () => {
       log('Peers refuse to call invitations')
       this.status = 'onLine'
       this.eventBus.emit('LocalInvitationRefused')
     })
+
+    //Local call failed
     this._invitation.on('LocalInvitationFailure', () => {
       log('Call process failed')
       this.status = 'onLine'
       this.eventBus.emit('LocalInvitationFailure')
     })
+
+    //Send call invitation locally
     this._invitation.send()  
   }
   
   peerInvitation() {
     this._remoteInvitation = null
+
+    //Remote monitor receives call invitation
     this._client.on('RemoteInvitationReceived', (remoteInvitation) => {
       log('Receive call invitation', remoteInvitation.callerId)
+      log('remoteInvitation', remoteInvitation)
       if(this.status !== 'onLine') {
         setTimeout(() => {
           remoteInvitation.refuse()
@@ -86,19 +105,26 @@ export default class RTMClient {
   }
 
   peerEvents () {
+    //The caller has cancelled the call invitation
     this._remoteInvitation.on('RemoteInvitationCanceled', () => {
       log('The call invitation was cancelled')
       this.status = 'onLine'
       this.eventBus.emit('RemoteInvitationCanceled')
     })
+
+    //Accepted call invitation successfully
     this._remoteInvitation.on('RemoteInvitationAccepted', () => {
       log('Peers receive calls')
       this.eventBus.emit('RemoteInvitationAccepted')
     })
+
+    //Call invitation rejected successfully
     this._remoteInvitation.on('RemoteInvitationRefused', () => {
       log('The call invitation has been declined')
       this.eventBus.emit('RemoteInvitationRefused')
     })
+
+    //Call invitation process failed
     this._remoteInvitation.on('RemoteInvitationFailure', () => {
       log('Peer call process failed')
       this.status = 'onLine'
@@ -106,16 +132,19 @@ export default class RTMClient {
     })
   }
   
+  //Cancel call invitation
   cancelCall() {
     this._invitation && this._invitation.cancel()
     this.status = 'onLine'
   }
 
+  //Accept call invitation
   acceptCall() {
     this._remoteInvitation && this._remoteInvitation.accept()
     this.status = 'meeting'
   }
 
+  //Decline call invitation
   refuseCall() {
     this._remoteInvitation && this._remoteInvitation.refuse()
     this.status = 'onLine'

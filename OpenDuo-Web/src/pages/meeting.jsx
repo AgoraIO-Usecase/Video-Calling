@@ -4,7 +4,7 @@ import { useGlobalState, useGlobalMutation } from '../utils/container'
 import { makeStyles } from '@material-ui/core/styles'
 import useRouter from '../utils/use-router'
 import useStream from '../utils/use-stream'
-import RTCClient from '../rtc-client'
+import RTCClient from '../agora-rtc-client.js'
 import Tooltip from '@material-ui/core/Tooltip'
 import StreamPlayer from './meeting/stream-player'
 
@@ -214,6 +214,7 @@ const MeetingPage = () => {
                   mutationCtx.clearAllStream()
                   // mutationCtx.resetState()
                   routerCtx.history.push('/')
+                  stateCtx.rtmClient.status = 'onLine'
                 })
               }}
             ></div>

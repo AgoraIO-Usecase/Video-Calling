@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react'
 import { useGlobalState, useGlobalMutation } from '../utils/container'
-import RTCClient from '../rtc-client'
+import RTCClient from '../agora-rtc-client.js'
 
 export default function useDevices () {
   const stateCtx = useGlobalState()

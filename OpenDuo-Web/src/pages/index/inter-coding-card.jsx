@@ -74,12 +74,12 @@ export default function IndexCard () {
         return
       }
     }).catch(() => {
-        
+      log('The query failed')
+      mutationCtx.toastError('The query failed')
     })
   }
 
   const codeChange = (value) => {
-    log('code', value)
     setCode(value)
   }
 

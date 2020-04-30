@@ -100,7 +100,7 @@ export default function IndexCard () {
     >
       <Link to="/setting" className="setting-btn" />
       <a
-        href="https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web"
+        href="https://github.com/AgoraIO-Usecase/Video-Calling/tree/master"
         className="github"
       ></a>
       <Box

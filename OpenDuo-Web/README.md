@@ -24,6 +24,7 @@ To build and run the sample application, get an App ID:
 
     ```bash
     REACT_APP_AGORA_APP_ID=<#YOUR Agora.io APP ID#>
+    REACT_APP_AGORA_APP_TOKEN=<#YOUR Agora.io APP TOKEN#>
     REACT_APP_AGORA_LOG=true
     ```
 
