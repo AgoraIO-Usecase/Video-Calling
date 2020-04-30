@@ -69,11 +69,11 @@ public class VideoActivity extends BaseCallActivity {
         rtcEngine().setClientRole(io.agora.rtc.Constants.CLIENT_ROLE_BROADCASTER);
         setVideoConfiguration();
         setupLocalPreview();
-        joinRtcChannel(mChannel, "", config().getUserId());
+        joinRtcChannel(mChannel, "", Integer.parseInt(config().getUserId()));
     }
 
     private void setupLocalPreview() {
-        SurfaceView surfaceView = setupVideo(config().getUserId(), true);
+        SurfaceView surfaceView = setupVideo(Integer.parseInt(config().getUserId()), true);
         surfaceView.setZOrderOnTop(true);
         mLocalPreviewLayout.addView(surfaceView);
     }
