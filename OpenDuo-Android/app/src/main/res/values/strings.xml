@@ -5,7 +5,7 @@
     <string name="start_call_title">Start Calling Your Friend</string>
     <string name="main_welcome">Welcome To</string>
     <string name="app_name_simple" translatable="false">OPEN DUO</string>
-    <string name="identifier_format">Your Identifier Code: %d</string>
+    <string name="identifier_format">Your Identifier Code: %s</string>
     <string name="share_code_hint">Share the code so that others can call you</string>
     <string name="powered_by_agora" translatable="false">Powered by agora.io</string>
     <string name="need_necessary_permissions">Necessary permissions acquired</string>
