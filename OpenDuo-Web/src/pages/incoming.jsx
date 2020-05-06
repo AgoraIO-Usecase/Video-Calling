@@ -89,6 +89,8 @@ const useStyles = makeStyles(theme => ({
 export default function CardPage () {
   const classes = useStyles()
   const stateCtx = useGlobalState()
+  const [refuse, setRefuse] = useState(false)
+  const [answer, setAnswer] = useState(false)
 
   const handleClickStartCall = () => {
     stateCtx.rtmClient.acceptCall()
@@ -96,6 +98,22 @@ export default function CardPage () {
 
   const handleClickEndCall = () => {
     stateCtx.rtmClient.refuseCall()  
+  }
+
+  const mouseOverRefuse = () => {
+    setRefuse(true)
+  }
+
+  const mouseOutRefuse = () => {
+    setRefuse(false)
+  }
+
+  const mouseOverAnswer = () => {
+    setAnswer(true)
+  }
+
+  const mouseOutAnswer = () => {
+    setAnswer(false)
   }
 
   return (
@@ -117,8 +135,16 @@ export default function CardPage () {
             </div>
             <div className={classes.item}>
               <div className={classes.iconCall}>
-                <div className='endCall-image-incoming' onClick={handleClickEndCall}/>
-                <div className='startCall-image' onClick={handleClickStartCall}/>
+                <div 
+                  onMouseOver={mouseOverRefuse} onMouseOut={mouseOutRefuse}
+                  className={refuse ? 'endCall-image-incoming-pressed' : 'endCall-image-incoming'}
+                  onClick={handleClickEndCall}
+                />
+                <div
+                  onMouseOver={mouseOverAnswer} onMouseOut={mouseOutAnswer}
+                  className={answer ? 'startCall-image-pressed' : 'startCall-image'} 
+                  onClick={handleClickStartCall}
+                />
               </div>
             </div> 
           </div>

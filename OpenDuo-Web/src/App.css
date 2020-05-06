@@ -557,6 +557,34 @@ body {
   background-image: url("./assets/btn_startcall_normal.png");
 }
 
+.endCall-image-incoming-pressed {
+  margin-bottom: 3.5rem;
+  margin-right: 5.5rem;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/btn_endcall_pressed.png");
+}
+
+.endCall-image-calling-pressed {
+  margin-bottom: 3.5rem;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/btn_endcall_pressed.png");
+}
+
+.startCall-image-pressed {
+  margin-bottom: 3.5rem;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/btn_startcall_pressed.png");
+}
+
 .active .icon-audience {
   width: 100px;
   height: 118px;

@@ -36,8 +36,11 @@ export default class RTMClient {
     return this._client.queryPeersOnlineStatus(peerIds)  
   }
 
-  localInvitation(calleeId) {
-    this._invitation = null
+  localInvitation(calleeId, channel) {
+    if(this._invitation !== null) {
+      this._invitation.removeAllListeners()
+      this._invitation = null
+    }
 
     //Create a local invitation
     this._invitation = this._client.createLocalInvitation(calleeId)
@@ -75,14 +78,14 @@ export default class RTMClient {
       this.status = 'onLine'
       this.eventBus.emit('LocalInvitationFailure')
     })
+    
+    this._invitation.content = channel
 
     //Send call invitation locally
     this._invitation.send()  
   }
   
   peerInvitation() {
-    this._remoteInvitation = null
-
     //Remote monitor receives call invitation
     this._client.on('RemoteInvitationReceived', (remoteInvitation) => {
       log('Receive call invitation', remoteInvitation.callerId)

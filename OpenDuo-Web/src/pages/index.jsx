@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useGlobalState, useGlobalMutation } from '../utils/container'
 import { makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
-import { log, getRoomCode } from '../utils/utils'
+import { log } from '../utils/utils'
 import useRouter from '../utils/use-router'
 import { useHistory } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
@@ -54,6 +54,7 @@ const Index = () => {
     stateCtx.rtmClient.on('RemoteInvitationReceived', (remoteInvitation) => {
       mutationCtx.updatePeerCode(remoteInvitation.callerId)
       mutationCtx.updateIncomingCode(remoteInvitation.callerId)
+      mutationCtx.updateConfig({ channelName: remoteInvitation.content })
       routerCtx.history.push({
         pathname: `/incoming/`
       })
@@ -70,22 +71,20 @@ const Index = () => {
 
     stateCtx.rtmClient.on('RemoteInvitationAccepted', () => {
       log('Accept success')
-      let roomCode = getRoomCode(stateCtx.peerCode, stateCtx.userCode)
-      log('roomCodeRemote', roomCode)
-      mutationCtx.updateConfig({ channelName: roomCode})
       mutationCtx.startLoading()
+      let channel = stateCtx.config.channelName
+      log('channel id', channel)
       routerCtx.history.push({
-        pathname: `/meeting/${roomCode}`
+        pathname: `/meeting/${channel}`
       }) 
     })
 
     stateCtx.rtmClient.on('LocalInvitationAccepted', () => {
-      let roomCode = getRoomCode(stateCtx.userCode, stateCtx.peerCode)
-      log('roomCodeLocal', roomCode)
-      mutationCtx.updateConfig({ channelName: roomCode })
       mutationCtx.startLoading()
+      let channel = stateCtx.config.channelName
+      log('channel id', channel)
       routerCtx.history.push({
-        pathname: `/meeting/${roomCode}`
+        pathname: `/meeting/${channel}`
       })
     }) 
 

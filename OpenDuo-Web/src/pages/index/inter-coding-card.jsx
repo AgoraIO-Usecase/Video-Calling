@@ -4,7 +4,7 @@ import { useGlobalState, useGlobalMutation } from '../../utils/container'
 import FormControl from '@material-ui/core/FormControl'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-import { log } from '../../utils/utils'
+import { log, getRoomCode} from '../../utils/utils'
 import { Link } from 'react-router-dom'
 import InputCall from './inputCall'
 
@@ -67,7 +67,9 @@ export default function IndexCard () {
       if(res[code]) {
         log( 'peer', code ,'is online')
         mutationCtx.updatePeerCode(code)
-        stateCtx.rtmClient.localInvitation(code)
+        let roomCode = getRoomCode(stateCtx.userCode, code)
+        mutationCtx.updateConfig({ channelName: roomCode })
+        stateCtx.rtmClient.localInvitation(code, roomCode)
       } else {
         log('peer is not login')
         mutationCtx.toastError('peer has not logged on')

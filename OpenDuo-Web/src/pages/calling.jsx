@@ -85,9 +85,18 @@ const useStyles = makeStyles(theme => ({
 export default function CardPage () {
   const classes = useStyles()
   const stateCtx = useGlobalState()
+  const [cancel, setCancel] = useState(false)
 
   const handleClickEndCall = () => {
     stateCtx.rtmClient.cancelCall()
+  }
+
+  const mouseOver = () => {
+    setCancel(true)
+  }
+
+  const mouseOut = () => {
+    setCancel(false)
   }
 
   return (
@@ -108,7 +117,11 @@ export default function CardPage () {
               <div className={classes.wait}>Calling...</div>
             </div>
             <div className={classes.item}>
-              <div className='endCall-image-calling' onClick={handleClickEndCall}/>
+              <div
+                onMouseOver={mouseOver} onMouseOut={mouseOut}
+                className={cancel ? 'endCall-image-calling-pressed' : 'endCall-image-calling'}
+                onClick={handleClickEndCall}
+              />
             </div>
           </div>
         </Box>

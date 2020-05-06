@@ -74,7 +74,7 @@ const MeetingPage = () => {
       resolution: stateCtx.config.resolution,
       muteVideo: muteVideo,
       muteAudio: muteAudio,
-      uid: stateCtx.uid,
+      uid: stateCtx.userCode,
       host: stateCtx.config.host
       // beauty: stateCtx.beauty
     }
