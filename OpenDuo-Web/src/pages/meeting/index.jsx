@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import clsx from 'clsx'
-import { useGlobalState, useGlobalMutation } from '../utils/container'
+import { useGlobalState, useGlobalMutation } from '../../utils/container'
 import { makeStyles } from '@material-ui/core/styles'
-import useRouter from '../utils/use-router'
-import useStream from '../utils/use-stream'
-import RTCClient from '../agora-rtc-client.js'
+import useRouter from '../../utils/use-router'
+import useStream from '../../utils/use-stream'
+import RTCClient from '../../agora-rtc-client.js'
 import Tooltip from '@material-ui/core/Tooltip'
-import StreamPlayer from './meeting/stream-player'
+import StreamPlayer from './stream-player'
 
 const useStyles = makeStyles({
   menu: {
@@ -60,7 +60,6 @@ const MeetingPage = () => {
     }
     return client
   }, [stateCtx.codec, stateCtx.mode])
-
   const [localStream, currentStream] = useStream(localClient)
   const [muteVideo, setMuteVideo] = useState(stateCtx.muteVideo)
   const [muteAudio, setMuteAudio] = useState(stateCtx.muteAudio)

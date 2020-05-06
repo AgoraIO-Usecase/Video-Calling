@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
-import { useGlobalState, useGlobalMutation } from '../utils/container'
+import { useGlobalState, useGlobalMutation } from '../../utils/container'
 import { makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
-import { log } from '../utils/utils'
-import useRouter from '../utils/use-router'
+import { log } from '../../utils/utils'
+import useRouter from '../../utils/use-router'
 import { useHistory } from 'react-router-dom'
 import { Switch, Route } from 'react-router-dom'
 
-import Card from './index/card'
-import Meeting from './meeting'
-import Calling from './calling'
-import Incoming from './incoming'
+import Card from '../index/card'
+import Meeting from '../meeting/index'
+import Calling from '../calling'
+import Incoming from '../incoming'
 
 const useStyles = makeStyles(() => ({
   container: {
