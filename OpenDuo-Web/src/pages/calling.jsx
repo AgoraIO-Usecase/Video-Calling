@@ -2,7 +2,7 @@ import React, {useState, useEffect}  from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
-import { log } from '../utils/utils'
+import { log, debounce } from '../utils/utils'
 import { useGlobalState } from '../utils/container'
 
 
@@ -120,7 +120,7 @@ export default function CardPage () {
               <div
                 onMouseOver={mouseOver} onMouseOut={mouseOut}
                 className={cancel ? 'endCall-image-calling-pressed' : 'endCall-image-calling'}
-                onClick={handleClickEndCall}
+                onClick={debounce(handleClickEndCall, 200)}
               />
             </div>
           </div>
