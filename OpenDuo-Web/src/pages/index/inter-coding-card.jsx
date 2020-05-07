@@ -110,7 +110,7 @@ export default function IndexCard () {
             />
           </div>
         </div>
-        <span className={classes.interexplain}>Enter your friend's indentifier code here</span>
+        <span className={classes.interexplain}>Enter your friend&apos;s indentifier code here</span>
         <FormControl className={classes.grid}>
           <Button
             onClick={handleClickCall}
