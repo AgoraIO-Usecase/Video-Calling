@@ -25,9 +25,22 @@ const getRoomCode = (c1, c2) => {
   return roomCode
 }
 
+const debounce = function(foo, t) {
+  let timer
+  return function() {
+    if (timer !== undefined) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(() => {
+      foo.apply(this, arguments)              
+    }, t)  
+  }
+}
+
 export { 
   log,
   produceCode,
   getUserCode,
   getRoomCode,
+  debounce,
 }
