@@ -6,7 +6,7 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import { log, getRoomCode} from '../../utils/utils'
 import { Link } from 'react-router-dom'
-import InputCall from './inputCall'
+import InputCall from './inputCall/inputCall'
 
 
 const useStyles = makeStyles((theme) => ({

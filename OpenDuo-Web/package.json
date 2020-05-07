@@ -1,5 +1,5 @@
 {
-  "name": "openlive-web",
+  "name": "openduo-web",
   "version": "3.0.2",
   "private": true,
   "homepage": ".",
@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "lint-fix": "eslint --fix src/ "
   },
   "browserslist": {
     "production": [
@@ -35,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.1",
     "prettier": "^2.0.2"
