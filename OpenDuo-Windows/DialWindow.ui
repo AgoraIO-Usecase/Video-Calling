@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialWindow</class>
+ <widget class="QWidget" name="DialWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>736</width>
+    <height>536</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>736</width>
+    <height>536</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑 Light</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>DialWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/uiresource/Open live-win.jpg);</string>
+  </property>
+  <widget class="QWidget" name="centralWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>808</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralWidget{
+background-image: url(:/uiresource/pic-win01.png);
+}</string>
+   </property>
+   <widget class="QPushButton" name="btnmin">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>39</y>
+      <width>18</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btnmin {
+	border-image: url(:/uiresource/min-normal.png);
+}
+
+QPushButton#btnmin:hover {
+	border-image: url(:/uiresource/min-hover.png);
+}
+
+QPushButton#btnmin:pressed {
+	border-image: url(:/uiresource/min-pushed.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnBack">
+    <property name="geometry">
+     <rect>
+      <x>388</x>
+      <y>33</y>
+      <width>32</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btnBack{
+border-image: url(:/uiresource/icon-back.png);
+background-image: url(:/uiresource/icon-back.png);
+}
+
+QPushButton#btnBack:hover{
+border-image: url(:/uiresource/icon-back hover.png);
+background-image: url(:/uiresource/icon-back hover.png);
+}
+
+QPushButton#btnBack:pressed{
+border-image: url(:/uiresource/icon-back.png);
+background-image: url(:/uiresource/icon-back.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnjoin">
+    <property name="geometry">
+     <rect>
+      <x>411</x>
+      <y>390</y>
+      <width>260</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>-1</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btnjoin{
+border-image: url(:/uiresource/button-default.png);
+background-image: url(:/uiresource/button-default.png);
+color: rgb(255, 255, 255);
+font: bold 75 17px &quot;微软雅黑&quot;;
+}
+
+QPushButton#btnjoin:hover{
+border-image: url(:/uiresource/button-hover.png);
+background-image: url(:/uiresource/button-hover.png);
+color: rgb(150, 150, 150);
+font: bold 75 17px &quot;微软雅黑&quot;;
+}
+
+QPushButton#btnjoin:pressed{
+border-image: url(:/uiresource/button-default.png);
+background-image: url(:/uiresource/button-default.png);
+color: rgb(255, 255, 255);
+font: bold 75 17px &quot;微软雅黑&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Call</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelName">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>340</y>
+      <width>178</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelName{
+color: rgb(255, 255, 255);
+background-color: rgb(0e, cf, ff);
+font: bold 75 32px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="text">
+     <string>Open Duo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelIdentifier">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>170</y>
+      <width>150</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelIdentifier{
+color: rgb(148, 148, 148);
+background-color: rgb(0e, cf, ff);
+font: bold 75 21px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="text">
+     <string>Dial Number</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelInfo">
+    <property name="geometry">
+     <rect>
+      <x>407</x>
+      <y>270</y>
+      <width>259</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelInfo{
+color: rgb(148, 148, 148);
+background-color: rgb(0e, cf, ff);
+font: bold 75 14px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="text">
+     <string>Enter your friend's identifier code here</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>209</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #949494;
+    color: rgb(148, 148, 148);
+    font: bold 75 48px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>475</x>
+      <y>209</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #949494;
+    color: rgb(148, 148, 148);
+    font: bold 75 48px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>209</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #949494;
+    color: rgb(148, 148, 148);
+    font: bold 75 48px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>605</x>
+      <y>209</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #949494;
+    color: rgb(148, 148, 148);
+    font: bold 75 48px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="errorLabel">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>452</y>
+      <width>231</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#errorLabel{
+color: #FF0000;
+background-color: rgb(0e, cf, ff);
+font: bold 75 14px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
