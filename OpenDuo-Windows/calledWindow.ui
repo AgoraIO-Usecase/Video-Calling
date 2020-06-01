@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>calledWindow</class>
+ <widget class="QWidget" name="calledWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>386</width>
+    <height>531</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>386</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralwidget{
+	background-image: url(:/uiresource/pic-win-calling.png);
+};</string>
+   </property>
+   <widget class="QPushButton" name="btnlastpage">
+    <property name="geometry">
+     <rect>
+      <x>389</x>
+      <y>31</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:!hover{
+border-image: url(:/uiresource/icon-back.png);
+background-image: url(:/uiresource/icon-back.png);
+}
+
+QPushButton:hover{
+border-image: url(:/uiresource/icon-back hover.png);
+background-image: url(:/uiresource/icon-back hover.png);
+}
+
+QPushButton:pressed{
+border-image: url(:/uiresource/icon-back.png);
+background-image: url(:/uiresource/icon-back.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>378</x>
+      <y>73</y>
+      <width>324</width>
+      <height>1</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-top: 1px solid rgb(234, 234, 234);</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refuseButton">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>400</y>
+      <width>72</width>
+      <height>72</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#refuseButton
+{
+	background-image: url(:/uiresource/btn_endcall_normal.png);
+    border-radius: 32px;
+}
+
+QPushButton#refuseButton:hover
+{
+	background-image: url(:/uiresource/btn_endcall_normal.png);
+    border-radius: 32px;
+}
+QPushButton#refuseButton:pressed
+{
+	background-image: url(:/uiresource/btn_endcall_pressed.png);
+    border-radius: 32px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelIncomingId">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>270</y>
+      <width>120</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelIncomingId{
+color: white;
+background-color: rgb(0e, cf, ff);
+font: bold 75 48px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCallingInfo">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>320</y>
+      <width>120</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelCallingInfo{
+color: white;
+background-color: rgb(0e, cf, ff);
+font: bold 75 18px &quot;微软雅黑&quot;;
+};</string>
+    </property>
+    <property name="text">
+     <string>Incoming...</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCallingImage">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>88</y>
+      <width>158</width>
+      <height>158</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#labelCallingImage
+{
+	image: url(:/uiresource/portrait.png);
+    border-radius: 84px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="acceptButton">
+    <property name="geometry">
+     <rect>
+      <x>228</x>
+      <y>400</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#acceptButton
+{
+	image: url(:/uiresource/btn_startcall_normal.png);
+    border-radius: 32px;
+}
+
+QPushButton#acceptButton:hover
+{
+	image: url(:/uiresource/btn_startcall_normal.png);
+    border-radius: 32px;
+}
+QPushButton#acceptButton:pressed
+{
+	image: url(:/uiresource/btn_startcall_pressed.png);
+    border-radius: 32px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
