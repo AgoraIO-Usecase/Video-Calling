@@ -2,8 +2,6 @@ parameters:
   displayName: ''
   workingDirectory: ''
   scheme: ''
-  rtcsdkurl: ''
-  rtmsdkurl: ''
 
 jobs:
   - job: ${{ parameters.displayName }}Build
@@ -29,7 +27,7 @@ jobs:
         inputs:
           provProfileSecureFile: 'AgoraAppsDevProfile.mobileprovision'
 
-      - script: cd ${{ parameters.workingDirectory }} && chmod +x build.sh && ./build.sh
+      - script: cd ${{ parameters.workingDirectory }} && chmod +x build.sh && ./build.sh ${{ parameters.workingDirectory }} ${{ parameters.scheme }}
 
       - script: cd ${{ parameters.workingDirectory }} && mkdir app && mv *.ipa app && mv *.xcarchive app && zip -r ${{ parameters.displayName }}.zip app
 

@@ -10,10 +10,6 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-variables:
-  iOSRTCSDK: 'https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v3_0_0_FULL.zip?_ga=2.86470680.1650799636.1583667533-5559409.1503304822'
-  iOSRTMSDK: 'https://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v1_2_2.zip?_ga=2.86470680.1650799636.1583667533-5559409.1503304822'
-
 jobs:
 
 - template: cicd/templates/build-android.yml
@@ -26,5 +22,3 @@ jobs:
     displayName: 'OpenDuoiOS'
     workingDirectory: 'OpenDuo-iOS'
     scheme: 'OpenDuo'
-    rtcsdkurl: $(iOSRTCSDK)
-    rtmsdkurl: $(iOSRTMSDK)
