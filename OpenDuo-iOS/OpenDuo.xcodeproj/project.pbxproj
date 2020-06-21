@@ -3,18 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86887D0F588D69BC8FA22A14 /* Pods_OpenDuo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC834BDAB62E8A591D8E6030 /* Pods_OpenDuo.framework */; };
 		A70E43F123C6FDB200FC9581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F023C6FDB200FC9581 /* AppDelegate.swift */; };
 		A70E43F523C6FDB200FC9581 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E43F423C6FDB200FC9581 /* MainViewController.swift */; };
 		A70E43F823C6FDB200FC9581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E43F623C6FDB200FC9581 /* Main.storyboard */; };
 		A70E43FA23C6FDB300FC9581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70E43F923C6FDB300FC9581 /* Assets.xcassets */; };
 		A70E43FD23C6FDB300FC9581 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70E43FB23C6FDB300FC9581 /* LaunchScreen.storyboard */; };
-		A70E440C23C721DB00FC9581 /* AgoraRtmKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */; };
 		A70E441223C72C8300FC9581 /* CallCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441123C72C8300FC9581 /* CallCenter.swift */; };
-		A70E441323C72E7500FC9581 /* AgoraRtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */; };
 		A70E441823CC138F00FC9581 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441723CC138F00FC9581 /* NumberView.swift */; };
 		A70E441B23CC1E0F00FC9581 /* DialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441A23CC1E0F00FC9581 /* DialView.swift */; };
 		A70E441D23CC3D9500FC9581 /* DialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E441C23CC3D9500FC9581 /* DialViewController.swift */; };
@@ -23,26 +22,16 @@
 		A70E442523CC6AA900FC9581 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A70E442423CC6AA900FC9581 /* ring.mp3 */; };
 		A70E442723CC715100FC9581 /* AgoraRtm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E442623CC715100FC9581 /* AgoraRtm.swift */; };
 		A70E442A23CC719800FC9581 /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E442923CC719800FC9581 /* KeyCenter.swift */; };
-		A70E442D23CC731700FC9581 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E442C23CC731700FC9581 /* CoreTelephony.framework */; };
-		A70E442F23CC732B00FC9581 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E442E23CC732000FC9581 /* libc++.tbd */; };
-		A70E443123CC734100FC9581 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E443023CC733600FC9581 /* libresolv.tbd */; };
-		A70E443323CC734A00FC9581 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E443223CC734A00FC9581 /* SystemConfiguration.framework */; };
 		A756991C23CD640700401ED5 /* Log.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A756991B23CD640700401ED5 /* Log.storyboard */; };
 		A756991F23CD642800401ED5 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756991D23CD642800401ED5 /* LogViewController.swift */; };
 		A756992023CD642800401ED5 /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756991E23CD642800401ED5 /* VideoChatViewController.swift */; };
 		A756992323CD6A8400401ED5 /* AGEError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756992223CD6A8400401ED5 /* AGEError.swift */; };
-		A773BD3F2408E68A003ECBFD /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD3E2408E689003ECBFD /* VideoToolbox.framework */; };
-		A773BD412408E68E003ECBFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD402408E68E003ECBFD /* AVFoundation.framework */; };
-		A773BD432408E694003ECBFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD422408E694003ECBFD /* AudioToolbox.framework */; };
-		A773BD442408E6A2003ECBFD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70E442C23CC731700FC9581 /* CoreTelephony.framework */; };
-		A773BD482408E6AF003ECBFD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD452408E6AF003ECBFD /* CoreMedia.framework */; };
-		A773BD492408E6AF003ECBFD /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD462408E6AF003ECBFD /* CoreMotion.framework */; };
-		A773BD4A2408E6AF003ECBFD /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD472408E6AF003ECBFD /* CoreML.framework */; };
-		A773BD4C2408E6C7003ECBFD /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A773BD4B2408E6C7003ECBFD /* Accelerate.framework */; };
 		A7A8CF1223CD61500089F4CF /* VideoChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48F05A80422395BAA89A6C1C /* Pods-OpenDuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenDuo.release.xcconfig"; path = "Target Support Files/Pods-OpenDuo/Pods-OpenDuo.release.xcconfig"; sourceTree = "<group>"; };
+		5ADE59AFE2141D664DEB2023 /* Pods-OpenDuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenDuo.debug.xcconfig"; path = "Target Support Files/Pods-OpenDuo/Pods-OpenDuo.debug.xcconfig"; sourceTree = "<group>"; };
 		A70E43ED23C6FDB200FC9581 /* OpenDuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70E43F023C6FDB200FC9581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70E43F423C6FDB200FC9581 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -50,8 +39,6 @@
 		A70E43F923C6FDB300FC9581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70E43FC23C6FDB300FC9581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A70E43FE23C6FDB300FC9581 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtmKit.framework; sourceTree = "<group>"; };
-		A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcKit.framework; sourceTree = "<group>"; };
 		A70E441123C72C8300FC9581 /* CallCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallCenter.swift; sourceTree = "<group>"; };
 		A70E441723CC138F00FC9581 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		A70E441A23CC1E0F00FC9581 /* DialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialView.swift; sourceTree = "<group>"; };
@@ -77,6 +64,7 @@
 		A773BD472408E6AF003ECBFD /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		A773BD4B2408E6C7003ECBFD /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		A7A8CF1123CD61500089F4CF /* VideoChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoChat.storyboard; sourceTree = "<group>"; };
+		DC834BDAB62E8A591D8E6030 /* Pods_OpenDuo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenDuo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,20 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A773BD412408E68E003ECBFD /* AVFoundation.framework in Frameworks */,
-				A773BD4C2408E6C7003ECBFD /* Accelerate.framework in Frameworks */,
-				A773BD482408E6AF003ECBFD /* CoreMedia.framework in Frameworks */,
-				A70E441323C72E7500FC9581 /* AgoraRtcKit.framework in Frameworks */,
-				A773BD442408E6A2003ECBFD /* CoreTelephony.framework in Frameworks */,
-				A773BD3F2408E68A003ECBFD /* VideoToolbox.framework in Frameworks */,
-				A70E442D23CC731700FC9581 /* CoreTelephony.framework in Frameworks */,
-				A70E443123CC734100FC9581 /* libresolv.tbd in Frameworks */,
-				A773BD492408E6AF003ECBFD /* CoreMotion.framework in Frameworks */,
-				A773BD432408E694003ECBFD /* AudioToolbox.framework in Frameworks */,
-				A70E442F23CC732B00FC9581 /* libc++.tbd in Frameworks */,
-				A70E443323CC734A00FC9581 /* SystemConfiguration.framework in Frameworks */,
-				A773BD4A2408E6AF003ECBFD /* CoreML.framework in Frameworks */,
-				A70E440C23C721DB00FC9581 /* AgoraRtmKit.framework in Frameworks */,
+				86887D0F588D69BC8FA22A14 /* Pods_OpenDuo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +85,7 @@
 				A70E43EF23C6FDB200FC9581 /* OpenDuo */,
 				A70E43EE23C6FDB200FC9581 /* Products */,
 				A70E442B23CC731700FC9581 /* Frameworks */,
+				F8F5864A188A5D21234F165C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,8 +104,6 @@
 				A70E442023CC4F8A00FC9581 /* Views */,
 				A70E442823CC717700FC9581 /* Models */,
 				A70E440E23C721DF00FC9581 /* Supporting Files */,
-				A70E440B23C721DB00FC9581 /* AgoraRtcKit.framework */,
-				A70E440A23C721DA00FC9581 /* AgoraRtmKit.framework */,
 			);
 			path = OpenDuo;
 			sourceTree = "<group>";
@@ -196,8 +170,18 @@
 				A70E443023CC733600FC9581 /* libresolv.tbd */,
 				A70E442E23CC732000FC9581 /* libc++.tbd */,
 				A70E442C23CC731700FC9581 /* CoreTelephony.framework */,
+				DC834BDAB62E8A591D8E6030 /* Pods_OpenDuo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8F5864A188A5D21234F165C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5ADE59AFE2141D664DEB2023 /* Pods-OpenDuo.debug.xcconfig */,
+				48F05A80422395BAA89A6C1C /* Pods-OpenDuo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A70E440123C6FDB300FC9581 /* Build configuration list for PBXNativeTarget "OpenDuo" */;
 			buildPhases = (
+				C9F81C0B7C8BB671A16CA173 /* [CP] Check Pods Manifest.lock */,
 				A70E43E923C6FDB200FC9581 /* Sources */,
 				A70E43EA23C6FDB200FC9581 /* Frameworks */,
 				A70E43EB23C6FDB200FC9581 /* Resources */,
+				502BCB04ED3FC4FBE0AF7F1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +254,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		502BCB04ED3FC4FBE0AF7F1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenDuo/Pods-OpenDuo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenDuo/Pods-OpenDuo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenDuo/Pods-OpenDuo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9F81C0B7C8BB671A16CA173 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenDuo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A70E43E923C6FDB200FC9581 /* Sources */ = {
@@ -428,6 +456,7 @@
 		};
 		A70E440223C6FDB300FC9581 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADE59AFE2141D664DEB2023 /* Pods-OpenDuo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -453,6 +482,7 @@
 		};
 		A70E440323C6FDB300FC9581 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F05A80422395BAA89A6C1C /* Pods-OpenDuo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
