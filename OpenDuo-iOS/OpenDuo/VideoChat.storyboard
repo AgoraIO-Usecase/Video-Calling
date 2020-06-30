@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,6 +100,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28264099359512329" green="0.25691255927085876" blue="0.34382003545761108" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="U9u-fT-DFZ" secondAttribute="bottom" id="0ph-Iz-vXR"/>
                             <constraint firstItem="LZg-5L-xeZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2YX-WB-UuO"/>
                             <constraint firstItem="U9u-fT-DFZ" firstAttribute="trailing" secondItem="bhC-Zh-0jg" secondAttribute="trailing" id="3VW-mb-Wud"/>
                             <constraint firstItem="IcU-fJ-7nU" firstAttribute="leading" secondItem="7Wh-nG-1kC" secondAttribute="trailing" constant="28" id="3Wr-up-scu"/>
@@ -114,7 +116,6 @@
                             <constraint firstItem="LZg-5L-xeZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YdT-SS-WbL"/>
                             <constraint firstItem="riT-8m-B10" firstAttribute="leading" secondItem="4vp-RG-lNX" secondAttribute="leading" id="ZCh-CQ-IMl"/>
                             <constraint firstItem="riT-8m-B10" firstAttribute="height" secondItem="4vp-RG-lNX" secondAttribute="height" id="a1c-p1-8F3"/>
-                            <constraint firstItem="U9u-fT-DFZ" firstAttribute="bottom" secondItem="bhC-Zh-0jg" secondAttribute="bottom" id="dg1-Ff-82G"/>
                             <constraint firstItem="QRw-lx-Hkf" firstAttribute="leading" secondItem="bhC-Zh-0jg" secondAttribute="leading" constant="16" id="jhm-Hp-f9G"/>
                             <constraint firstItem="5x4-q9-Nuw" firstAttribute="width" secondItem="7Wh-nG-1kC" secondAttribute="width" id="ne8-L0-xEz"/>
                             <constraint firstItem="U9u-fT-DFZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pID-WY-ovL"/>
@@ -148,8 +149,8 @@
     </scenes>
     <resources>
         <image name="big_logo" width="100" height="106"/>
-        <image name="call" width="284" height="284"/>
-        <image name="end" width="292" height="292"/>
+        <image name="call" width="64" height="64"/>
+        <image name="end" width="72" height="72"/>
         <image name="logo-white" width="39" height="42"/>
         <image name="mic" width="220" height="220"/>
         <image name="mic_pressed" width="220" height="220"/>

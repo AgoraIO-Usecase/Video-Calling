@@ -125,6 +125,9 @@ class VideoChatViewController: UIViewController {
             fatalError("rtc uid nil")
         }
         
+        // Sets the audio session's operational restriction.
+        agoraKit.setAudioSessionOperationRestriction(.all)
+        
         // 1. Users can only see each other after they join the
         // same channel successfully using the same app id.
         // 2. One token is only valid for the channel name that
@@ -182,7 +185,7 @@ class VideoChatViewController: UIViewController {
 
 extension VideoChatViewController: AgoraRtcEngineDelegate {
     // first remote video frame
-    func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
         isRemoteVideoRender = true
         
         // Only one remote video view is available for this
@@ -195,7 +198,7 @@ extension VideoChatViewController: AgoraRtcEngineDelegate {
         agoraKit.setupRemoteVideo(videoCanvas)
     }
     
-    func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid:UInt, reason:AgoraUserOfflineReason) {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
         isRemoteVideoRender = false
         
         guard let remoteUid = remoteUid else {
@@ -207,7 +210,7 @@ extension VideoChatViewController: AgoraRtcEngineDelegate {
         }
     }
     
-    func rtcEngine(_ engine: AgoraRtcEngineKit, didVideoMuted muted:Bool, byUid:UInt) {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didVideoMuted muted: Bool, byUid: UInt) {
         isRemoteVideoRender = !muted
     }
     
