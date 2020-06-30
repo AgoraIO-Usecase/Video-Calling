@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W32-hX-aZV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W32-hX-aZV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -170,7 +171,7 @@
                         <outlet property="dialView" destination="rL0-jg-8yT" id="eXA-EN-mU8"/>
                         <outlet property="idCodeLabel" destination="2T5-xy-XMZ" id="69Q-Rd-Rpw"/>
                         <outlet property="numberView" destination="vYw-e1-Ac6" id="5O2-Tb-xPQ"/>
-                        <segue destination="o0O-Jp-gzR" kind="presentation" identifier="DialToVideoChat" id="NMA-pv-6Qr"/>
+                        <segue destination="o0O-Jp-gzR" kind="presentation" identifier="DialToVideoChat" animates="NO" id="NMA-pv-6Qr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHk-xM-P6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

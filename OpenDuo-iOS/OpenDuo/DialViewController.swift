@@ -18,6 +18,8 @@ class DialViewController: UIViewController, ShowAlertProtocol {
     
     var localNumber: String?
     
+    var prepareToVideoChat: (() -> ())?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -102,17 +104,19 @@ private extension DialViewController {
             fatalError("rtm inviter nil")
         }
         
+        appleCallKit.startOutgoingCall(of: remoteNumber)
+        appleCallKit.setCallConnected(of: remoteNumber)
+        
         // rtm query online status
-        kit.queryPeerOnline(remoteNumber, success: { [weak self, weak vc] (onlineStatus) in
+        kit.queryPeerOnline(remoteNumber, success: { [weak vc] (onlineStatus) in
             switch onlineStatus {
             case .online:      sendInvitation(remote: remoteNumber, callingVC: vc!)
-            case .offline:     vc?.close("remote offline")
-            case .unreachable: vc?.close("remote unreach")
-            @unknown default:
-                fatalError("queryPeerOnline")
+            case .offline:     vc?.close(.remoteReject(remoteNumber))
+            case .unreachable: vc?.close(.remoteReject(remoteNumber))
+            @unknown default:  fatalError("queryPeerOnline")
             }
         }) { [weak vc] (error) in
-            vc?.close(error.localizedDescription)
+            vc?.close(.error(error))
         }
         
         // rtm send invitation
@@ -120,7 +124,7 @@ private extension DialViewController {
             let channel = "\(localNumber)-\(remoteNumber)-\(Date().timeIntervalSinceReferenceDate)"
             
             inviter.sendInvitation(peer: remoteNumber, extraContent: channel, accepted: { [weak self, weak vc] in
-                vc?.close()
+                vc?.close(.toVideoChat)
                 
                 guard let remote = UInt(remoteNumber) else {
                     fatalError("string to int fail")
@@ -130,10 +134,11 @@ private extension DialViewController {
                 data.channel = channel
                 data.remote = remote
                 self?.performSegue(withIdentifier: "DialToVideoChat", sender: data)
-                }, refused: { [weak vc] in
-                    vc?.close("remote refused this invitation")
+                
+            }, refused: { [weak vc] in
+                vc?.close(.remoteReject(remoteNumber))
             }) { [weak vc] (error) in
-                vc?.close(error.localizedDescription)
+                vc?.close(.error(error))
             }
         }
     }
@@ -146,26 +151,31 @@ extension DialViewController: DialViewDelegate {
 }
 
 extension DialViewController: CallingVCDelegate {
-    func callingVC(_ vc: CallingViewController, didHungup reason: String?) {
-        vc.dismiss(animated: true, completion: nil)
-        
-        guard let inviter = AgoraRtm.shared().inviter else {
-            fatalError("rtm inviter nil")
-        }
-        
-        let errorHandle: ErrorCompletion = { [weak self] (error: AGEError) in
-            self?.showAlert(error.localizedDescription)
-        }
-        
-        switch inviter.status {
-        case .outgoing:
-            inviter.cancelLastOutgoingInvitation(fail: errorHandle)
-        default:
-            break
-        }
-        
-        if let reason = reason {
-            self.showAlert(reason)
+    func callingVC(_ vc: CallingViewController, didHungup reason: HungupReason) {
+        vc.dismiss(animated: reason == .toVideoChat ? false : true) { [unowned self] in
+            switch reason {
+            case .error:
+                self.showAlert(reason.description)
+            case .remoteReject(let remote):
+                self.showAlert(reason.description + ": \(remote)")
+            case .normaly:
+                guard let inviter = AgoraRtm.shared().inviter else {
+                    fatalError("rtm inviter nil")
+                }
+                
+                let errorHandle: ErrorCompletion = { [weak self] (error: AGEError) in
+                    self?.showAlert(error.localizedDescription)
+                }
+                
+                switch inviter.status {
+                case .outgoing:
+                    inviter.cancelLastOutgoingInvitation(fail: errorHandle)
+                default:
+                    break
+                }
+            default:
+                break
+            }
         }
     }
 }
@@ -201,7 +211,7 @@ extension DialViewController: CallCenterDelegate {
             fatalError("rtm inviter nil")
         }
         
-        guard let channelId = inviter.lastIncomingInvitation?.content else {
+        guard let channel = inviter.lastIncomingInvitation?.content else {
             fatalError("lastIncomingInvitation content nil")
         }
         
@@ -210,10 +220,14 @@ extension DialViewController: CallCenterDelegate {
         }
         
         inviter.accpetLastIncomingInvitation()
-        var data: (channel: String, remote: UInt)
-        data.channel = channelId
-        data.remote = remote
-        self.performSegue(withIdentifier: "DialToVideoChat", sender: data)
+        
+        // present VideoChat VC after 'callCenterDidActiveAudioSession'
+        self.prepareToVideoChat = { [weak self] in
+            var data: (channel: String, remote: UInt)
+            data.channel = channel
+            data.remote = remote
+            self?.performSegue(withIdentifier: "DialToVideoChat", sender: data)
+        }
     }
     
     func callCenter(_ callCenter: CallCenter, declineCall session: String) {
@@ -238,9 +252,15 @@ extension DialViewController: CallCenterDelegate {
     
     func callCenter(_ callCenter: CallCenter, endCall session: String) {
         print("callCenter endCall")
+        self.prepareToVideoChat = nil
     }
     
     func callCenterDidActiveAudioSession(_ callCenter: CallCenter) {
         print("callCenter didActiveAudioSession")
+        
+        // Incoming call
+        if let prepare = self.prepareToVideoChat {
+            prepare()
+        }
     }
 }

@@ -10,8 +10,34 @@ import UIKit
 import AgoraRtmKit
 import AudioToolbox
 
+enum HungupReason {
+    case remoteReject(String), toVideoChat, normaly(String), error(Error)
+    
+    fileprivate var rawValue: Int {
+        switch self {
+        case .remoteReject: return 0
+        case .toVideoChat:  return 1
+        case .normaly:      return 2
+        case .error:        return 3
+        }
+    }
+    
+    static func==(left: HungupReason, right: HungupReason) -> Bool {
+        return left.rawValue == right.rawValue
+    }
+    
+    var description: String {
+        switch self {
+        case .remoteReject:     return "remote reject"
+        case .toVideoChat:      return "start video chat"
+        case .normaly:          return "normally hung up"
+        case .error(let error): return error.localizedDescription
+        }
+    }
+}
+
 protocol CallingVCDelegate: NSObjectProtocol {
-    func callingVC(_ vc: CallingViewController, didHungup reason: String?)
+    func callingVC(_ vc: CallingViewController, didHungup reason: HungupReason)
 }
 
 class CallingViewController: UIViewController {
@@ -29,7 +55,7 @@ class CallingViewController: UIViewController {
             }
             
             switch ringStatus {
-            case .on: startPlayRing()
+            case .on:  startPlayRing()
             case .off: stopPlayRing()
             }
         }
@@ -42,7 +68,7 @@ class CallingViewController: UIViewController {
             }
             
             switch animationStatus {
-            case .on: startAnimating()
+            case .on:  startAnimating()
             case .off: stopAnimationg()
             }
         }
@@ -85,10 +111,10 @@ class CallingViewController: UIViewController {
     }
     
     @IBAction func doHungUpPressed(_ sender: UIButton) {
-        close()
+        close(.normaly(remoteNumber!))
     }
     
-    func close(_ reason: String? = nil) {
+    func close(_ reason: HungupReason) {
         animationStatus = .off
         ringStatus = .off
         delegate?.callingVC(self, didHungup: reason)
