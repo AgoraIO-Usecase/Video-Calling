@@ -87,60 +87,13 @@ class DialViewController: UIViewController, ShowAlertProtocol {
 }
 
 private extension DialViewController {
-    func callingVC(_ vc:CallingViewController, startOutgoing numbers: String?) {
-        guard let kit = AgoraRtm.shared().kit else {
-            fatalError("rtm kit nil")
-        }
-        
-        guard let localNumber = localNumber else {
-            fatalError("localNumber nil")
-        }
-        
+    func callingVC(_ vc: CallingViewController, startOutgoing numbers: String?) {
         guard let remoteNumber = numbers else {
             fatalError("remoteNumber nil")
         }
         
-        guard let inviter = AgoraRtm.shared().inviter else {
-            fatalError("rtm inviter nil")
-        }
-        
         appleCallKit.startOutgoingCall(of: remoteNumber)
-        appleCallKit.setCallConnected(of: remoteNumber)
-        
-        // rtm query online status
-        kit.queryPeerOnline(remoteNumber, success: { [weak vc] (onlineStatus) in
-            switch onlineStatus {
-            case .online:      sendInvitation(remote: remoteNumber, callingVC: vc!)
-            case .offline:     vc?.close(.remoteReject(remoteNumber))
-            case .unreachable: vc?.close(.remoteReject(remoteNumber))
-            @unknown default:  fatalError("queryPeerOnline")
-            }
-        }) { [weak vc] (error) in
-            vc?.close(.error(error))
-        }
-        
-        // rtm send invitation
-        func sendInvitation(remote: String, callingVC: CallingViewController) {
-            let channel = "\(localNumber)-\(remoteNumber)-\(Date().timeIntervalSinceReferenceDate)"
-            
-            inviter.sendInvitation(peer: remoteNumber, extraContent: channel, accepted: { [weak self, weak vc] in
-                vc?.close(.toVideoChat)
-                
-                guard let remote = UInt(remoteNumber) else {
-                    fatalError("string to int fail")
-                }
-                
-                var data: (channel: String, remote: UInt)
-                data.channel = channel
-                data.remote = remote
-                self?.performSegue(withIdentifier: "DialToVideoChat", sender: data)
-                
-            }, refused: { [weak vc] in
-                vc?.close(.remoteReject(remoteNumber))
-            }) { [weak vc] (error) in
-                vc?.close(.error(error))
-            }
-        }
+//        appleCallKit.setCallConnected(of: remoteNumber)
     }
 }
 
@@ -157,8 +110,9 @@ extension DialViewController: CallingVCDelegate {
             case .error:
                 self.showAlert(reason.description)
             case .remoteReject(let remote):
+                self.appleCallKit.endCall(of: remote)
                 self.showAlert(reason.description + ": \(remote)")
-            case .normaly:
+            case .normaly(let remote):
                 guard let inviter = AgoraRtm.shared().inviter else {
                     fatalError("rtm inviter nil")
                 }
@@ -169,6 +123,7 @@ extension DialViewController: CallingVCDelegate {
                 
                 switch inviter.status {
                 case .outgoing:
+                    self.appleCallKit.endCall(of: remote)
                     inviter.cancelLastOutgoingInvitation(fail: errorHandle)
                 default:
                     break
@@ -204,9 +159,7 @@ extension DialViewController: AgoraRtmInvitertDelegate {
 extension DialViewController: CallCenterDelegate {
     func callCenter(_ callCenter: CallCenter, answerCall session: String) {
         print("callCenter answerCall")
-        
-        callCenter.setCallConnected(of: session)
-        
+                
         guard let inviter = AgoraRtm.shared().inviter else {
             fatalError("rtm inviter nil")
         }
@@ -244,6 +197,61 @@ extension DialViewController: CallCenterDelegate {
     
     func callCenter(_ callCenter: CallCenter, startCall session: String) {
         print("callCenter startCall")
+        
+        guard let kit = AgoraRtm.shared().kit else {
+            fatalError("rtm kit nil")
+        }
+        
+        guard let localNumber = localNumber else {
+            fatalError("localNumber nil")
+        }
+        
+        guard let inviter = AgoraRtm.shared().inviter else {
+            fatalError("rtm inviter nil")
+        }
+        
+        guard let vc = self.presentedViewController as? CallingViewController else {
+            fatalError("CallingViewController nil")
+        }
+        
+        let remoteNumber = session
+        
+        // rtm query online status
+        kit.queryPeerOnline(remoteNumber, success: { [weak vc] (onlineStatus) in
+            switch onlineStatus {
+            case .online:      sendInvitation(remote: remoteNumber, callingVC: vc!)
+            case .offline:     vc?.close(.remoteReject(remoteNumber))
+            case .unreachable: vc?.close(.remoteReject(remoteNumber))
+            @unknown default:  fatalError("queryPeerOnline")
+            }
+        }) { [weak vc] (error) in
+            vc?.close(.error(error))
+        }
+        
+        // rtm send invitation
+        func sendInvitation(remote: String, callingVC: CallingViewController) {
+            let channel = "\(localNumber)-\(remoteNumber)-\(Date().timeIntervalSinceReferenceDate)"
+            
+            inviter.sendInvitation(peer: remoteNumber, extraContent: channel, accepted: { [weak self, weak vc] in
+                vc?.close(.toVideoChat)
+                
+                self?.appleCallKit.setCallConnected(of: remote)
+                
+                guard let remote = UInt(remoteNumber) else {
+                    fatalError("string to int fail")
+                }
+                
+                var data: (channel: String, remote: UInt)
+                data.channel = channel
+                data.remote = remote
+                self?.performSegue(withIdentifier: "DialToVideoChat", sender: data)
+                
+            }, refused: { [weak vc] in
+                vc?.close(.remoteReject(remoteNumber))
+            }) { [weak vc] (error) in
+                vc?.close(.error(error))
+            }
+        }
     }
     
     func callCenter(_ callCenter: CallCenter, muteCall muted: Bool, session: String) {
