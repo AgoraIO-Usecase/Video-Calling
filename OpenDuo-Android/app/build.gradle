@@ -26,7 +26,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
     implementation 'io.agora.rtc:full-sdk:2.9.2'
-    compileOnly files('libs/agora-rtm-sdk.jar')
+    implementation 'io.agora.rtm:rtm-sdk:1.2.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
