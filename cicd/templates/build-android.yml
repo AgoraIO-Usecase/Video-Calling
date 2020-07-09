@@ -14,10 +14,9 @@ jobs:
       - group: RTM
       
     steps:
-      - script: cd ${{ parameters.project }} && ls && python ci.env.py && chmod +x ./rtm.sh &&./rtm.sh
+      - script: cd ${{ parameters.project }} && ls && python ci.env.py
         env:
           AGORA_APP_ID: $(agora.appId)
-          RTM_SDK_LINK: $(rtmsdk.link)
 
       - task: Gradle@2
         inputs:
