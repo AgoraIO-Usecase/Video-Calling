@@ -17,6 +17,8 @@ class DialViewController: UIViewController, ShowAlertProtocol {
     private lazy var appleCallKit = CallCenter(delegate: self)
     
     var localNumber: String?
+
+    var callerNumber: String?
     
     var prepareToVideoChat: (() -> ())?
     
@@ -33,6 +35,9 @@ class DialViewController: UIViewController, ShowAlertProtocol {
         
         if let localNumber = localNumber {
             idCodeLabel.text?.append(localNumber)
+        }
+        if !(callerNumber?.isEmpty ?? true) {
+            appleCallKit.showIncomingCall(of: callerNumber!)
         }
     }
     

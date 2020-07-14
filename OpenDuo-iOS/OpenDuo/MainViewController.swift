@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgoraRtmKit
 
 protocol ShowAlertProtocol: UIViewController {
     func showAlert(_ message: String, handler: ((UIAlertAction) -> Void)?)
@@ -40,6 +41,7 @@ class MainViewController: UIViewController, ShowAlertProtocol {
         let rtm = AgoraRtm.shared()
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/rtm.log"
         rtm.setLogPath(path)
+        rtm.inviterDelegate = self
         
         let image = UIImage(named: "background")
         view.layer.contents = image?.cgImage
@@ -77,8 +79,21 @@ class MainViewController: UIViewController, ShowAlertProtocol {
         case "MainToDial":
             let vc = segue.destination as? DialViewController
             vc?.localNumber = localNumber
+            if sender != nil{
+                vc?.callerNumber = sender as? String
+            }
         default:
             break
         }
+    }
+}
+
+
+extension MainViewController: AgoraRtmInvitertDelegate {
+    func inviter(_ inviter: AgoraRtmCallKit, didReceivedIncoming invitation: AgoraRtmInvitation) {
+        self.performSegue(withIdentifier: "MainToDial", sender: invitation.caller)
+    }
+
+    func inviter(_ inviter: AgoraRtmCallKit, remoteDidCancelIncoming invitation: AgoraRtmInvitation) {
     }
 }
