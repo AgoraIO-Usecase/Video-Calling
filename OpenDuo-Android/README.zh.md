@@ -1,6 +1,6 @@
 # OpenLive for Android
 
-*Read this in other languages: [English](README.md)*
+[English](README.md) | 中文
 
 **为了安全，建议正式环境中启用 [动态密钥鉴权](https://docs.agora.io/cn/Real-time-Messaging/RTM_key?platform=All%20Platforms) 机制**
 
@@ -57,11 +57,15 @@ Agora视频SDK会在Android Studio打开后自动通过gradle同步安装。
 也可以使用 `Gradle` 直接编译运行。
 
 ## 联系我们
+
+- 如果你遇到了困难，可以先参阅 [常见问题](https://docs.agora.io/cn/faq)
+- 如果你想了解更多官方示例，可以参考 [官方SDK示例](https://github.com/AgoraIO)
+- 如果你想了解声网SDK在复杂场景下的应用，可以参考 [官方场景案例](https://github.com/AgoraIO-usecase)
+- 如果你想了解声网的一些社区开发者维护的项目，可以查看 [社区](https://github.com/AgoraIO-Community)
 - 完整的 API 文档见 [文档中心](https://docs.agora.io/cn/)
-- 如果在集成中遇到问题, 你可以到 [开发者社区](https://dev.agora.io/cn/) 提问
-- 如果有售前咨询问题, 可以拨打 400 632 6626，或加入官方Q群 12742516 提问
+- 若遇到问题需要开发者帮助，你可以到 [开发者社区](https://rtcdeveloper.com/) 提问
 - 如果需要售后技术支持, 你可以在 [Agora Dashboard](https://dashboard.agora.io) 提交工单
-- 如果发现了示例代码的 bug, 欢迎提交 [issue](https://github.com/AgoraIO/Basic-Video-Broadcasting/issues)
+- 如果发现了示例代码的 bug，欢迎提交 [issue](https://github.com/AgoraIO-Usecase/Video-Calling/issues)
 
 ## 代码许可
 The MIT License (MIT).

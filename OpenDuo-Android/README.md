@@ -2,11 +2,11 @@
 
 *English | [中文](README.zh.md)*
 
-This readme describes the steps and considerations for demonstrating the Agora OpenDuo iOS sample app.
+This readme describes the steps and considerations for demonstrating the Agora OpenDuo Android sample app.
 
 ## Introduction
 
-Built upon the Agora Video SDK and the Agora RTM SDK, the Agora OpenDuo for iOS is an open-source demo that integrates 1 to 1 video call into your iOS applications.
+Built upon the Agora Video SDK and the Agora RTM SDK, the Agora OpenDuo for iOS is an open-source demo that integrates 1 to 1 video call into your Android applications.
 
 This sample app allows you to:
 
@@ -63,7 +63,7 @@ Or use `Gradle` to build and run.
 - Repositories managed by developer communities can be found at [Agora Community](https://github.com/AgoraIO-Community)
 - You can find full API documentation at [Document Center](https://docs.agora.io/en/)
 - If you encounter problems during integration, you can ask question in [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io)
-- You can file bugs about this sample at [issue](https://github.com/AgoraIO/Basic-Video-Call/issues)
+- You can file bugs about this sample at [issue](https://github.com/AgoraIO-Usecase/Video-Calling/issues)
 
 ## License
 

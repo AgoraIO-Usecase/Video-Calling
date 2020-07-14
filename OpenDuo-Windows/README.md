@@ -30,22 +30,23 @@ Finally, Open OpenLive.pro with your Qt5.6(or higher) and build current project 
     [BaseInfo]
     AppId=xxxx
 
-**Note：**If you fill appid in the code file, appid in ini file will be omitted.
+**Note：** If you fill appid in the code file, appid in ini file will be omitted.
   
 ## Developer Environment Requirements
 * VC++ 2013(or higher)
 * QT5.6(or higher)
 * Windows 7(or higher)
 
-## Connect Us
+## Contact Us
 
-- For potential issues, take a look at our [FAQ](https://docs.agora.io/cn/faq) first
+- For potential issues, take a look at our [FAQ](https://docs.agora.io/en/faq) first
 - Dive into [Agora SDK Samples](https://github.com/AgoraIO) to see more tutorials
 - Take a look at [Agora Use Case](https://github.com/AgoraIO-usecase) for more complicated real use case
 - Repositories managed by developer communities can be found at [Agora Community](https://github.com/AgoraIO-Community)
 - You can find full API documentation at [Document Center](https://docs.agora.io/en/)
 - If you encounter problems during integration, you can ask question in [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io)
-- You can file bugs about this sample at [issue](https://github.com/AgoraIO/Basic-Video-Call/issues)
+- You can file bugs about this sample at [issue](https://github.com/AgoraIO-Usecase/Video-Calling/issues)
+ 
 ## License
 
 The MIT License (MIT).
