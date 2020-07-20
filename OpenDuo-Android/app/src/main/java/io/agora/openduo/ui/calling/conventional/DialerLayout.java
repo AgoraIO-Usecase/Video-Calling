@@ -41,7 +41,7 @@ public class DialerLayout extends RelativeLayout implements View.OnClickListener
         void backspace() {
             if (mCount == 0) return;
             mCount--;
-            mCallNumber %= 10;
+            mCallNumber /= 10;
             mCallNumberSlots[mCount].setText("");
         }
 
