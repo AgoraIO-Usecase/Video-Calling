@@ -115,7 +115,8 @@ class VideoChatViewController: UIViewController {
     
     func joinChannel() {
         // Set audio route to speaker
-        agoraKit.setDefaultAudioRouteToSpeakerphone(true)
+        // For videocalling, we don't suggest letting sdk handel audio routing
+//        agoraKit.setDefaultAudioRouteToSpeakerphone(true)
         
         guard let channel = channel else {
             fatalError("rtc channel id nil")
