@@ -7,5 +7,5 @@ target 'OpenDuo' do
 
   # Pods for OpenDuo
   pod 'AgoraRtm_iOS', '~> 1.2.2'
-  pod 'AgoraRtcEngine_iOS', '~> 3.0.1'
+  pod 'AgoraRtcEngine_iOS', '~> 3.1.0'
 end
