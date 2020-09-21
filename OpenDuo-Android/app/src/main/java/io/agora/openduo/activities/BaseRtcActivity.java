@@ -1,14 +1,21 @@
 package io.agora.openduo.activities;
 
+import android.text.TextUtils;
 import android.view.SurfaceView;
 
+import io.agora.openduo.R;
 import io.agora.rtc.RtcEngine;
 import io.agora.rtc.video.VideoCanvas;
 import io.agora.rtc.video.VideoEncoderConfiguration;
 
 public abstract class BaseRtcActivity extends BaseActivity {
     protected void joinRtcChannel(String channel, String info, int uid) {
-        rtcEngine().joinChannel(null, channel, info, uid);
+        String accessToken = getString(R.string.agora_access_token);
+        if (TextUtils.equals(accessToken, "") || TextUtils.equals(accessToken, "<#YOUR ACCESS TOKEN#>"))
+        {
+            accessToken = null;
+        }
+        rtcEngine().joinChannel(accessToken, channel, info, uid);
     }
 
     protected void leaveChannel() {

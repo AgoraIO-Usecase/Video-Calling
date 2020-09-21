@@ -67,8 +67,12 @@ public class OpenDuoApplication extends Application {
             rtmCallManager = mRtmClient.getRtmCallManager();
             rtmCallManager.setEventListener(mEventListener);
 
-            // By default do not use rtm token
-            mRtmClient.login(null, mConfig.getUserId(), new ResultCallback<Void>() {
+            String accessToken = getString(R.string.rtm_access_token);
+            if (TextUtils.equals(accessToken, "") || TextUtils.equals(accessToken, "<#YOUR ACCESS TOKEN#>"))
+            {
+                accessToken = null;
+            }
+            mRtmClient.login(accessToken, mConfig.getUserId(), new ResultCallback<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Log.i(TAG, "rtm client login success");
