@@ -1,6 +1,7 @@
 .DS_Store
 *.framework
 *.a
+Pods/
 xcuserdata
 node_modules
 .DS_Store
